@@ -1,0 +1,437 @@
+{
+  "RESPONSE": {
+    "RESULT": [
+      {
+        "TrainPosition": [
+          {
+            "Train": {
+              "OperationalTrainNumber": "11471",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "3606",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "1472"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (372319 6159255)",
+              "WGS84": "POINT (12.9754294436625 55.56254886212555)"
+            },
+            "TimeStamp": "2026-11-02T15:08:04.000+01:00",
+            "Status": {
+              "Active": false
+            },
+            "Bearing": 58,
+            "Speed": 5,
+            "VersionNumber": 639292291879362700,
+            "ModifiedTime": "2026-11-02T14:13:07.956Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "1472",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "3606",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "1472"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (380701 6182746)",
+              "WGS84": "POINT (13.098045609111615 55.775632406823135)"
+            },
+            "TimeStamp": "2026-11-02T15:37:24.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 45,
+            "Speed": 18,
+            "VersionNumber": 639292306482723300,
+            "ModifiedTime": "2026-11-02T14:37:28.514Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "18537",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "4634",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "18536"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (648290 6638598)",
+              "WGS84": "POINT (17.647747229901512 59.858332008508455)"
+            },
+            "TimeStamp": "2026-11-02T15:08:20.000+01:00",
+            "Status": {
+              "Active": false
+            },
+            "Bearing": 131,
+            "VersionNumber": 639292292012491900,
+            "ModifiedTime": "2026-11-02T14:13:21.262Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "2140",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "4383",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "2140"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (571490 6597051)",
+              "WGS84": "POINT (16.262956054438636 59.50577023139776)"
+            },
+            "TimeStamp": "2026-11-02T15:08:19.000+01:00",
+            "Status": {
+              "Active": false
+            },
+            "Bearing": 348,
+            "VersionNumber": 639292292027724500,
+            "ModifiedTime": "2026-11-02T14:13:22.793Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "28811",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "5309",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "28811"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (540093 6443846)",
+              "WGS84": "POINT (15.68084174019192 58.13413237549775)"
+            },
+            "TimeStamp": "2026-11-02T15:07:59.429+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 194,
+            "VersionNumber": 639292288798211000,
+            "ModifiedTime": "2026-11-02T14:07:59.842Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "11872",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "3904",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "1872"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (423051 6223941)",
+              "WGS84": "POINT (13.761230917553785 56.154274002226835)"
+            },
+            "TimeStamp": "2026-11-02T15:14:16.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 27,
+            "VersionNumber": 639292292568565000,
+            "ModifiedTime": "2026-11-02T14:14:16.866Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "7667",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "5210",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "7667"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (481232 6390884)",
+              "WGS84": "POINT (14.685462472984604 57.65984327544735)"
+            },
+            "TimeStamp": "2026-11-02T15:22:47.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 346,
+            "VersionNumber": 639292297677900500,
+            "ModifiedTime": "2026-11-02T14:22:47.805Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "8922",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "5075",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "8922"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (414493 6583081)",
+              "WGS84": "POINT (13.49508932342598 59.37773782834803)"
+            },
+            "TimeStamp": "2026-11-02T15:26:30.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 90,
+            "VersionNumber": 639292299907813900,
+            "ModifiedTime": "2026-11-02T14:26:30.793Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "8648",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "5490",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "8648"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (532849 6276298)",
+              "WGS84": "POINT (15.535439884828417 56.62972456248324)"
+            },
+            "TimeStamp": "2026-11-02T15:25:58.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 284,
+            "Speed": 0,
+            "VersionNumber": 639292299593768600,
+            "ModifiedTime": "2026-11-02T14:25:59.387Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "7637",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "5416",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "7637"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (383208 6314322)",
+              "WGS84": "POINT (13.079461724340602 56.9577325053221)"
+            },
+            "TimeStamp": "2026-11-02T15:27:00.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 256,
+            "VersionNumber": 639292301744062500,
+            "ModifiedTime": "2026-11-02T14:29:34.419Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "28810",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "5264",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "28810"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (562425 6341956)",
+              "WGS84": "POINT (16.033639867330184 57.21646833034551)"
+            },
+            "TimeStamp": "2026-11-02T15:31:00.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 81,
+            "VersionNumber": 639292303306741400,
+            "ModifiedTime": "2026-11-02T14:32:10.705Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "3840",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "2912",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "3840"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (359102 6374193)",
+              "WGS84": "POINT (12.64945733443766 57.48840710161082)"
+            },
+            "TimeStamp": "2026-11-02T15:31:00.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 56,
+            "VersionNumber": 639292303505592200,
+            "ModifiedTime": "2026-11-02T14:32:30.574Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "20952",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "4380",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "20954"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (545446 6585573)",
+              "WGS84": "POINT (15.800485299761688 59.40634080096074)"
+            },
+            "TimeStamp": "2026-11-02T15:32:35.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 127,
+            "VersionNumber": 639292303555541600,
+            "ModifiedTime": "2026-11-02T14:32:35.577Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "11078",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "7916",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "1078"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (356413 6213301)",
+              "WGS84": "POINT (12.694924456483651 56.043353371919295)"
+            },
+            "TimeStamp": "2026-11-02T15:32:44.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 330,
+            "VersionNumber": 639292303659190500,
+            "ModifiedTime": "2026-11-02T14:32:45.932Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "169",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "7384",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "169"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (319884 6400398)",
+              "WGS84": "POINT (11.97665738728662 57.70959601317805)"
+            },
+            "TimeStamp": "2026-11-02T15:33:04.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 254,
+            "VersionNumber": 639292303856864400,
+            "ModifiedTime": "2026-11-02T14:33:05.700Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "665",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "7410",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "665"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (414660 6583095)",
+              "WGS84": "POINT (13.498021768277782 59.377897366739454)"
+            },
+            "TimeStamp": "2026-11-02T15:33:12.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 275,
+            "VersionNumber": 639292303933441200,
+            "ModifiedTime": "2026-11-02T14:33:13.356Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "7358",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "3486",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "7358"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (320215 6400491)",
+              "WGS84": "POINT (11.982135117569822 57.71056266582417)"
+            },
+            "TimeStamp": "2026-11-02T15:33:26.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 257,
+            "Speed": 38,
+            "VersionNumber": 639292304112151300,
+            "ModifiedTime": "2026-11-02T14:33:31.229Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "2009",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "4184",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "2009"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (673893 6580823)",
+              "WGS84": "POINT (18.056751190937238 59.330297496711516)"
+            },
+            "TimeStamp": "2026-11-02T15:33:51.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 141,
+            "VersionNumber": 639292304321496400,
+            "ModifiedTime": "2026-11-02T14:33:52.162Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "11101",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "7944",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "1101"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (433329 6217984)",
+              "WGS84": "POINT (13.928146306411247 56.10230860648993)"
+            },
+            "TimeStamp": "2026-11-02T15:34:17.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 293,
+            "VersionNumber": 639292304577256400,
+            "ModifiedTime": "2026-11-02T14:34:17.845Z",
+            "Deleted": false
+          },
+          {
+            "Train": {
+              "OperationalTrainNumber": "27620",
+              "OperationalTrainDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "JourneyPlanNumber": "5492",
+              "JourneyPlanDepartureDate": "2026-11-02T00:00:00.000+01:00",
+              "AdvertisedTrainNumber": "27620"
+            },
+            "Position": {
+              "SWEREF99TM": "POINT (489028 6420785)",
+              "WGS84": "POINT (14.814745535381935 57.92868040686309)"
+            },
+            "TimeStamp": "2026-11-02T15:34:17.000+01:00",
+            "Status": {
+              "Active": true
+            },
+            "Bearing": 24,
+            "VersionNumber": 639292304583216100,
+            "ModifiedTime": "2026-11-02T14:34:18.329Z",
+            "Deleted": false
+          }
+        ],
+        "INFO": {
+          "SSEURL": "https://example.invalid/sse?token=redacted"
+        }
+      }
+    ]
+  }
+}

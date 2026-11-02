@@ -31,4 +31,4 @@ Livekarta över tåg i Sverige. `SPEC.md` är facit – uppdatera den när ett b
 - `.env` i repo-roten (läses av API:t). Se `.env.example`. Hemligheter aldrig i git eller frontend.
 - Fel från API:t: `{ error: { code, message } }` via `HttpError`.
 - Validera allt från Trafikverket med zod.
-- Kod på engelska, kommentarer och UI-text på svenska.
+- Kod och kommentarer på engelska, UI-text på svenska.
