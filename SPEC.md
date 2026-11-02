@@ -64,7 +64,7 @@ Varje milstolpe avslutas med typecheck, tester, lint och en körning av appen oc
 
 Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health` och felhantering via `HttpError`.
 
-### 1. Ingest från Trafikverket
+### 1. Ingest från Trafikverket ✅
 
 - zod-schema för `TrainPosition` och mappning till `TrainState` (WKT-parsning, id från annonserat tågnummer)
 - Initial query som fyller state, sedan SSE-prenumeration med återanslutning och backoff
@@ -159,8 +159,10 @@ Trafikverket API ──SSE──▶ Backend (Node/Express, TS) ──SSE──�
 
 **Backend:** Express i TypeScript, zod för validering av Trafikverkets svar.
 
-- _Ingest:_ vid start och vid varje återanslutning körs först en vanlig query på `TrainPosition` (aktiva tåg med färsk position) för att fylla state. Sedan öppnas en enda SSE-prenumeration för ändringar. Om strömmen tappas återansluter backenden med backoff (1 s upp till 60 s). Tystnad i mer än 60 s räknas som tappad ström. Senaste läget per tåg hålls i minnet.
+- _Ingest:_ vid start och vid varje återanslutning körs först en vanlig query på `TrainPosition` (tåg med färsk position) för att fylla state. Sedan öppnas en enda SSE-prenumeration för ändringar. Om strömmen tappas återansluter backenden med backoff (1 s upp till 60 s, nollställs när händelser kommer igen). Tystnad i mer än 60 s räknas som tappad ström. Senaste läget per tåg hålls i minnet.
   - Filtret använder en absolut tidsstämpel (nu − 30 min), eftersom `$dateadd` inte stöds tillsammans med `sseurl`.
+  - Filtret innehåller inte `Status.Active`. Strömmen använder samma filter, och inaktiva händelser behövs för `remove`. Inaktiva positioner i query-svaret sorteras bort i koden.
+  - Strömmen skickar ungefär var 5:e sekund ett event med ett helt `RESPONSE` som innehåller alla ändrade positioner sedan förra.
   - Samma annonserade tåg kan ha flera positioner med olika operativa tågnummer, där den gamla ofta är inaktiv. Därför ignoreras händelser (både `update` och `remove`) som är äldre än tågets nuvarande `measuredAt`.
 - _Annonseringsdata:_ `TrainAnnouncement` hämtas när ett tåg öppnas och cachas i minnet med kort TTL.
 - _Stationer:_ `TrainStation` synkas till Postgres en gång per dygn (och vid start om tabellen är tom). Stationerna läses in i minnet vid start och efter varje synk. De behövs för att översätta signaturer till namn och för att rita stationsprickar.
