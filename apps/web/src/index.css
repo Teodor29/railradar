@@ -1,5 +1,31 @@
 @import "tailwindcss";
 
+@theme static {
+  --color-page: oklch(97.2% 0.003 248); /* page and land */
+  --color-water: oklch(87.6% 0.038 247);
+  --color-surface: oklch(100% 0 0); /* cards, buttons, roads */
+  --color-fg: oklch(21% 0.032 265); /* primary text */
+  --color-muted: oklch(50.3% 0.026 257); /* secondary text, map labels */
+  --color-line: oklch(71.2% 0.019 253); /* rail, dividers, borders */
+  --color-accent: oklch(51.8% 0.182 258); /* selected, links, primary buttons */
+  --color-success: oklch(51.9% 0.139 147); /* on time */
+  --color-warning: oklch(53.9% 0.156 43); /* delayed */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-page: oklch(19.3% 0.014 253);
+    --color-water: oklch(14.9% 0.012 260);
+    --color-surface: oklch(25.7% 0.022 254);
+    --color-fg: oklch(96.7% 0.003 265);
+    --color-muted: oklch(71.2% 0.019 253);
+    --color-line: oklch(45.7% 0.025 255);
+    --color-accent: oklch(68.5% 0.168 256);
+    --color-success: oklch(76.9% 0.152 156);
+    --color-warning: oklch(78.4% 0.133 44);
+  }
+}
+
 html,
 body,
 #root {
@@ -7,6 +33,8 @@ body,
 }
 
 body {
-  background: #0b0f14;
-  color: #e5e7eb;
+  background: var(--color-page);
+  color: var(--color-fg);
+  font-family: system-ui, sans-serif;
+  overscroll-behavior: none;
 }
