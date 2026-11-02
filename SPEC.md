@@ -74,7 +74,7 @@ Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health`
 
 **Klart när:** API:t loggar antal tåg i state, antalet håller sig rimligt över tid och `/api/health` visar `connected`.
 
-### 2. Ström till klienter
+### 2. Ström till klienter ✅
 
 - `/api/stream` med `snapshot`, `update`, `remove` och `heartbeat`
 - Kompakt payload med korta nycklar, schema i `packages/shared`
@@ -166,7 +166,10 @@ Trafikverket API ──SSE──▶ Backend (Node/Express, TS) ──SSE──�
   - Samma annonserade tåg kan ha flera positioner med olika operativa tågnummer, där den gamla ofta är inaktiv. Därför ignoreras händelser (både `update` och `remove`) som är äldre än tågets nuvarande `measuredAt`.
 - _Annonseringsdata:_ `TrainAnnouncement` hämtas när ett tåg öppnas och cachas i minnet med kort TTL.
 - _Stationer:_ `TrainStation` synkas till Postgres en gång per dygn (och vid start om tabellen är tom). Stationerna läses in i minnet vid start och efter varje synk. De behövs för att översätta signaturer till namn och för att rita stationsprickar.
-- _Fan-out:_ alla klienter får alla tåg. Först en snapshot, sedan batchade ändringar varannan sekund. Bara ändrade tåg skickas, i ett kompakt format med korta nycklar. Ingen komprimeringsmiddleware på SSE-routen.
+- _Fan-out:_ alla klienter får alla tåg. Först en snapshot, sedan batchade ändringar varannan sekund. Bara ändrade tåg skickas, med korta nycklar för att spara mobildata (ca 25 % mindre än fulla fältnamn). Ingen komprimeringsmiddleware på SSE-routen.
+  - Händelser: `snapshot` (alla tåg, direkt vid anslutning), `update` (ändrade tåg), `remove` (id:n) och `heartbeat` (`{ t }` = servertid, var 15:e sekund).
+  - Ett tåg i strömmen: `i` id, `n` tågnummer, `la`/`lo` position (5 decimaler), `s` hastighet eller `null`, `b` bäring, `t` `measuredAt` i epoch-sekunder. Scheman i `packages/shared/src/stream.ts`.
+  - Tåg som försvinner vid återanslutning mot Trafikverket skickas som `remove`.
 - _Omstart:_ in-memory-state sparas inte. Efter omstart byggs det upp på nytt via initial query och strömmen. Postgres används inte för att återställa state.
 - _Migrationer:_ numrerade SQL-filer som körs vid start.
 

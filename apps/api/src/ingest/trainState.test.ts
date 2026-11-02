@@ -102,3 +102,63 @@ describe("TrainStore.pruneStale", () => {
     expect(store.size).toBe(0)
   })
 })
+
+describe("TrainStore.takeChanges", () => {
+  it("returns updated trains once", () => {
+    const store = new TrainStore()
+    store.applyPosition(positionAt("2026-11-02T15:00:00.000+01:00", { Bearing: 10 }))
+    store.applyPosition(positionAt("2026-11-02T15:00:05.000+01:00", { Bearing: 20 }))
+
+    const changes = store.takeChanges()
+    expect(changes.updated.map((train) => train.bearing)).toEqual([20])
+    expect(changes.removed).toEqual([])
+
+    expect(store.takeChanges()).toEqual({ updated: [], removed: [] })
+  })
+
+  it("only reports the removal when a train is updated and then removed", () => {
+    const store = new TrainStore()
+    store.applyPosition(positionAt("2026-11-02T15:00:00.000+01:00"))
+    store.applyPosition(positionAt("2026-11-02T15:00:05.000+01:00", { Deleted: true }))
+
+    expect(store.takeChanges()).toEqual({ updated: [], removed: [TRAIN_ID] })
+  })
+
+  it("only reports the update when a train is removed and then comes back", () => {
+    const store = new TrainStore()
+    store.applyPosition(positionAt("2026-11-02T15:00:00.000+01:00"))
+    store.takeChanges()
+
+    store.applyPosition(positionAt("2026-11-02T15:00:05.000+01:00", { Deleted: true }))
+    store.applyPosition(positionAt("2026-11-02T15:00:10.000+01:00"))
+
+    const changes = store.takeChanges()
+    expect(changes.updated.map((train) => train.id)).toEqual([TRAIN_ID])
+    expect(changes.removed).toEqual([])
+  })
+
+  it("reports nothing when an unknown train is removed", () => {
+    const store = new TrainStore()
+    store.applyPosition(positionAt("2026-11-02T15:00:00.000+01:00", { Deleted: true }))
+
+    expect(store.takeChanges()).toEqual({ updated: [], removed: [] })
+  })
+
+  it("reports stale trains as removed", () => {
+    const store = new TrainStore()
+    store.applyPosition(positionAt("2026-11-02T15:00:00.000+01:00"))
+    store.takeChanges()
+
+    store.pruneStale(new Date("2026-11-02T15:30:01.000+01:00"))
+    expect(store.takeChanges()).toEqual({ updated: [], removed: [TRAIN_ID] })
+  })
+
+  it("reports trains missing after replaceAll as removed", () => {
+    const store = new TrainStore()
+    store.applyPosition(positionAt("2026-11-02T15:00:00.000+01:00"))
+    store.takeChanges()
+
+    store.replaceAll([])
+    expect(store.takeChanges()).toEqual({ updated: [], removed: [TRAIN_ID] })
+  })
+})

@@ -2,9 +2,10 @@ import express from "express"
 import type { Health } from "@railradar/shared"
 import { pingDb } from "./db/pool"
 import { errorHandler, notFound } from "./errors"
+import type { Broadcaster } from "./stream/broadcaster"
 import { upstream } from "./upstream"
 
-export function createApp() {
+export function createApp(broadcaster: Broadcaster) {
   const app = express()
   app.disable("x-powered-by")
 
@@ -24,6 +25,18 @@ export function createApp() {
       },
     }
     res.status(dbOk ? 200 : 503).json(body)
+  })
+
+  app.get("/api/stream", (_req, res) => {
+    res.set({
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache",
+      Connection: "keep-alive",
+      // Stops proxies from buffering the stream.
+      "X-Accel-Buffering": "no",
+    })
+    res.flushHeaders()
+    broadcaster.addClient(res)
   })
 
   app.use(notFound)

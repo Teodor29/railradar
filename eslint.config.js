@@ -20,7 +20,10 @@ export default tseslint.config(
   {
     rules: {
       "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
-      "id-length": ["warn", { min: 2, exceptions: ["e", "i", "j", "x", "y", "_"] }],
+      "id-length": [
+        "warn",
+        { min: 2, properties: "never", exceptions: ["e", "i", "j", "x", "y", "_"] },
+      ],
     },
   },
   // Stänger av regler som krockar med Prettier. Måste ligga sist.
