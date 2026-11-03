@@ -10,10 +10,10 @@ Live på `railradar.se`.
 
 ### Karta
 
-- MapLibre GL med OpenFreeMap, mörk stil. Järnvägsnätet (`class=rail` i baskartan) ritas tydligare i en dämpad accentfärg.
-- Alla tåg som rapporterar position och har annonserat tågnummer visas live och rör sig mjukt (interpolering mellan positioner).
+- MapLibre GL med OpenFreeMap och en egen minimal stil i ljust och mörkt läge som följer systemet. Järnvägsnätet (`class=rail` i baskartan) ritas tydligt i grått. Det finns i baskartan först från zoom 8.
+- Alla tåg som rapporterar position och har annonserat tågnummer visas live och flyttas direkt till ny position när den kommer.
 - Fri navigering: panorera, zooma, klicka på vilket tåg som helst.
-- Attribution för OpenStreetMap/OpenFreeMap och Trafikverket syns på kartan.
+- Attribution för OpenStreetMap/OpenFreeMap och Trafikverket syns på kartan och fälls ihop till en knapp när man börjar använda kartan.
 
 ### Tågikon
 
@@ -84,13 +84,13 @@ Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health`
 
 ### 3. Karta med live-tåg
 
-- MapLibre med OpenFreeMap i mörk stil, tydligare järnvägsnät och attribution
+- MapLibre med OpenFreeMap i ljust och mörkt läge, tydligare järnvägsnät och attribution
 - Tågstore som är fristående från kartan, prenumererar på strömmen och återansluter automatiskt
-- Tågikon roterad efter bäring och med storlek som skalar med zoom, mjuk interpolering mellan positioner
+- Tågikon roterad efter bäring och med storlek som skalar med zoom
 - Nedtoning av tåg som inte setts på 2 min
 - Klick markerar ett tåg, klick på tom karta avmarkerar
 
-**Klart när:** tågen rör sig på kartan i webbläsaren, både på mobil och på desktop.
+**Klart när:** tågen uppdateras live på kartan i webbläsaren, både på mobil och på desktop.
 
 ### 4. Drift
 
@@ -137,7 +137,7 @@ Egen logik som bygger vidare på Trafikverkets data:
 - Hotspots: flera tåg som står still på samma sträcka markeras som trolig störning
 - Live-räknare, t.ex. "312 tåg i rörelse · 14 står still · snabbast just nu: X, 205 km/h"
 - Bild per tågtyp (via produktinformationen)
-- Dead reckoning för mjukare rörelse
+- Mjuk rörelse längs rälsen: positioner matchas mot järnvägsnätet så att tågen glider längs spåret i stället för att hoppa, eventuellt med dead reckoning så att de ligger närmare verkligheten (idag ca 10–20 s efter)
 - Indikator för tappad anslutning
 - Störningsinformation från `TrainMessage` (t.ex. signalfel på en sträcka)
 - Konton, sparade tåg och stationer, push-notiser vid försening

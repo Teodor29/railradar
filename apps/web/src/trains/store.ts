@@ -14,6 +14,12 @@ const MIN_BACKOFF_MS = 1_000
 const MAX_BACKOFF_MS = 30_000
 // EventSource.CLOSED, which doesn't exist in Node where the tests run.
 const CLOSED = 2
+const STALE_AFTER_MS = 2 * 60 * 1000
+
+// "Senast sett": the train stays on the map but its position is getting old.
+export function isStale(train: StreamTrain, serverNow: number): boolean {
+  return serverNow - train.t * 1000 > STALE_AFTER_MS
+}
 
 export type TrainChanges = {
   updated: string[]

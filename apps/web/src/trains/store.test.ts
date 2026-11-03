@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 import type { StreamTrain } from "@railradar/shared"
-import { TrainStore, type StreamSource, type TrainChanges } from "./store"
+import { isStale, TrainStore, type StreamSource, type TrainChanges } from "./store"
 
 const OPEN = 1
 const CLOSED = 2
@@ -163,5 +163,14 @@ describe("TrainStore", () => {
     }
 
     expect(sources).toHaveLength(1)
+  })
+})
+
+describe("isStale", () => {
+  it("is stale once the position is more than 2 minutes old", () => {
+    const measured = train("a", { t: 1_000 })
+
+    expect(isStale(measured, 1_000_000 + 120_000)).toBe(false)
+    expect(isStale(measured, 1_000_000 + 120_001)).toBe(true)
   })
 })
