@@ -27,18 +27,20 @@ function toRgba(color: string): string {
   return `rgba(${red}, ${green}, ${blue}, ${(alpha ?? 255) / 255})`
 }
 
-function readPalette(): Palette {
-  const styles = getComputedStyle(document.documentElement)
-  const read = (name: string) => toRgba(styles.getPropertyValue(name).trim())
+// Reads a color variable from index.css, e.g. "--color-fg".
+export function readColor(variable: string): string {
+  return toRgba(getComputedStyle(document.documentElement).getPropertyValue(variable).trim())
+}
 
+function readPalette(): Palette {
   return {
-    land: read("--color-page"),
-    water: read("--color-water"),
-    road: read("--color-surface"),
-    rail: read("--color-line"),
-    label: read("--color-muted"),
-    labelHalo: read("--color-page"),
-    waterLabel: read("--color-muted"),
+    land: readColor("--color-page"),
+    water: readColor("--color-water"),
+    road: readColor("--color-surface"),
+    rail: readColor("--color-line"),
+    label: readColor("--color-muted"),
+    labelHalo: readColor("--color-page"),
+    waterLabel: readColor("--color-muted"),
   }
 }
 

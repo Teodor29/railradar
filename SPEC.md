@@ -86,7 +86,7 @@ Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health`
 
 - MapLibre med OpenFreeMap i mörk stil, tydligare järnvägsnät och attribution
 - Tågstore som är fristående från kartan, prenumererar på strömmen och återansluter automatiskt
-- Tågikon roterad efter bäring, mjuk interpolering mellan positioner
+- Tågikon roterad efter bäring och med storlek som skalar med zoom, mjuk interpolering mellan positioner
 - Nedtoning av tåg som inte setts på 2 min
 - Klick markerar ett tåg, klick på tom karta avmarkerar
 
@@ -133,7 +133,7 @@ Egen logik som bygger vidare på Trafikverkets data:
 - Status "Position saknas" för tåg som har annonseringsdata men ingen position (blir nåbar först med sök)
 - Godståg och tåg utan annonserat nummer
 - Kameraföljning på mobil: kameran följer valt tåg tills användaren själv drar eller zoomar
-- Statusfärger på ikonerna och storlek som skalar med zoom
+- Statusfärger på ikonerna
 - Hotspots: flera tåg som står still på samma sträcka markeras som trolig störning
 - Live-räknare, t.ex. "312 tåg i rörelse · 14 står still · snabbast just nu: X, 205 km/h"
 - Bild per tågtyp (via produktinformationen)

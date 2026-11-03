@@ -2,8 +2,10 @@ import { useEffect, useRef } from "react"
 import { MapLibreMap, setWorkerUrl } from "maplibre-gl"
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url"
 import "maplibre-gl/dist/maplibre-gl.css"
+import type { TrainStore } from "../trains/store"
 import { useColorScheme } from "../theme"
 import { applyColors, createStyle } from "./style"
+import { addTrainLayer, applyTrainColors } from "./trainLayer"
 
 // MapLibre looks for its worker next to its own file, which breaks when Vite bundles it.
 setWorkerUrl(workerUrl)
@@ -13,7 +15,12 @@ const SWEDEN_BOUNDS: [[number, number], [number, number]] = [
   [24.2, 69.1],
 ]
 
-export function MapView() {
+function applyTheme(map: MapLibreMap) {
+  applyColors(map)
+  applyTrainColors(map)
+}
+
+export function MapView({ store }: { store: TrainStore }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
   const scheme = useColorScheme()
@@ -35,11 +42,17 @@ export function MapView() {
     map.touchZoomRotate.disableRotation()
     mapRef.current = map
 
+    let stopTrains: (() => void) | null = null
+    map.on("load", () => {
+      stopTrains = addTrainLayer(map, store)
+    })
+
     return () => {
+      stopTrains?.()
       map.remove()
       mapRef.current = null
     }
-  }, [])
+  }, [store])
 
   useEffect(() => {
     const map = mapRef.current
@@ -47,9 +60,9 @@ export function MapView() {
       return
     }
     if (map.isStyleLoaded()) {
-      applyColors(map)
+      applyTheme(map)
     } else {
-      map.once("load", () => applyColors(map))
+      map.once("load", () => applyTheme(map))
     }
   }, [scheme])
 
