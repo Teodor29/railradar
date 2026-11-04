@@ -26,7 +26,7 @@ export function Attribution() {
   }, [expanded])
 
   return (
-    <div ref={rootRef} className="absolute bottom-2 left-2 md:right-2 md:left-auto">
+    <div ref={rootRef} className="absolute bottom-2 left-2">
       {expanded ? (
         <div className="rounded-md bg-surface/80 px-2 py-0.5 text-xs text-muted backdrop-blur">
           <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">

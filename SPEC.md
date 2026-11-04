@@ -13,6 +13,7 @@ Live på `railradar.se`.
 - MapLibre GL med OpenFreeMap och en egen minimal stil i ljust och mörkt läge som följer systemet. Järnvägsnätet (`class=rail` i baskartan) ritas tydligt i grått. Det finns i baskartan först från zoom 8.
 - Alla tåg som rapporterar position och har annonserat tågnummer visas live och flyttas direkt till ny position när den kommer.
 - Fri navigering: panorera, zooma, klicka på vilket tåg som helst.
+- Knapp för "Min position" (geolocation) som flyger till användaren och visar en prick. Zoomknappar på desktop.
 - Attribution för OpenStreetMap/OpenFreeMap och Trafikverket syns på kartan och fälls ihop till en knapp när man börjar använda kartan.
 
 ### Tågikon
@@ -82,13 +83,13 @@ Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health`
 
 **Klart när:** `curl -N localhost:3000/api/stream` visar en snapshot följd av uppdateringar.
 
-### 3. Karta med live-tåg
+### 3. Karta med live-tåg ✅
 
 - MapLibre med OpenFreeMap i ljust och mörkt läge, tydligare järnvägsnät och attribution
 - Tågstore som är fristående från kartan, prenumererar på strömmen och återansluter automatiskt
 - Tågikon roterad efter bäring och med storlek som skalar med zoom
 - Nedtoning av tåg som inte setts på 2 min
-- Klick markerar ett tåg, klick på tom karta avmarkerar
+- Knapp för min position, och zoomknappar på desktop
 
 **Klart när:** tågen uppdateras live på kartan i webbläsaren, både på mobil och på desktop.
 
@@ -114,6 +115,7 @@ Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health`
 - zod-schema för `TrainAnnouncement`, hämtas när ett tåg öppnas och cachas med kort TTL
 - `/api/trains/:id` med produkt, operatör, från → till, inställt, försening, nästa station och stopplista
 - Avvikelser verifieras mot ett tåg som har avvikelser och läggs till om fälten finns
+- Klick markerar ett tåg (accentfärg och bricka med tågnummer) och öppnar panelen, klick på tom karta avmarkerar
 - Infopanel i kompakt och expanderat läge, mobile-first
 - Stationsprickar för valt tåg: passerade nedtonade, kommande tydliga
 
@@ -153,7 +155,7 @@ Trafikverket API ──SSE──▶ Backend (Node/Express, TS) ──SSE──�
                         Postgres (stationer)
 ```
 
-**Frontend:** React, TypeScript, Vite, Tailwind, MapLibre GL. All kartkod samlas så att stil och ikoner kan bytas på ett ställe. Tågdatan ligger i en egen store som inte känner till kartan.
+**Frontend:** React, TypeScript, Vite, Tailwind, MapLibre GL. All kartkod samlas så att stil och ikoner kan bytas på ett ställe. Tågdatan ligger i en egen store som inte känner till kartan. Alla färger, även kartans, är semantiska variabler i OKLCH i `index.css`. Kartan läser dem därifrån. `index.css` innehåller bara dessa tokens och grundstil. UI som återkommer, t.ex. kartknappar, blir React-komponenter med Tailwind-klasser, inte `@apply`-klasser. Ikoner kommer från `lucide-react`.
 
 **Repo:** monorepo med npm workspaces: `apps/api`, `apps/web` och `packages/shared` (gemensamma typer och zod-scheman för SSE-payload och API-svar).
 

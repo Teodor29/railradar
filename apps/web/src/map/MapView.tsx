@@ -4,6 +4,7 @@ import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url"
 import "maplibre-gl/dist/maplibre-gl.css"
 import type { TrainStore } from "../trains/store"
 import { useColorScheme } from "../theme"
+import { MapControls } from "./MapControls"
 import { applyColors, createStyle } from "./style"
 import { addTrainLayer, applyTrainColors } from "./trainLayer"
 
@@ -71,6 +72,7 @@ export function MapView({ store }: { store: TrainStore }) {
   return (
     <div className="absolute inset-0">
       <div ref={containerRef} className="h-full w-full" />
+      <MapControls mapRef={mapRef} />
     </div>
   )
 }
