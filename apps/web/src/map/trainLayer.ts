@@ -24,10 +24,10 @@ function toFeatures(store: TrainStore): FeatureCollection<Point> {
 }
 
 function drawIcons() {
-  const outline = readColor("--color-page")
+  const outline = readColor("--color-land")
   return {
-    normal: drawTrainIcon(readColor("--color-fg"), outline),
-    stale: drawTrainIcon(readColor("--color-line"), outline),
+    normal: drawTrainIcon(readColor("--color-train"), outline),
+    stale: drawTrainIcon(readColor("--color-train-stale"), outline),
   }
 }
 
@@ -49,7 +49,7 @@ export function addTrainLayer(map: MapLibreMap, store: TrainStore): () => void {
     layout: {
       "icon-image": ["case", ["get", "stale"], STALE_ICON, ICON],
       // The icon is drawn at full size, so it is only ever scaled down and stays sharp.
-      "icon-size": ["interpolate", ["linear"], ["zoom"], 5, 0.5, 9, 0.75, 13, 1],
+      "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 1],
       "icon-rotate": ["get", "b"],
       "icon-rotation-alignment": "map",
       "icon-allow-overlap": true,
@@ -58,7 +58,7 @@ export function addTrainLayer(map: MapLibreMap, store: TrainStore): () => void {
       "symbol-sort-key": ["case", ["get", "stale"], 0, 1],
     },
     paint: {
-      "icon-opacity": ["case", ["get", "stale"], 0.9, 1],
+      "icon-opacity": ["case", ["get", "stale"], 0.8, 1],
     },
   })
 

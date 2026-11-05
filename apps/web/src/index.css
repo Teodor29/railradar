@@ -1,28 +1,74 @@
 @import "tailwindcss";
 
 @theme static {
-  --color-page: oklch(97.2% 0.003 248); /* page and land */
-  --color-water: oklch(87.6% 0.038 247);
-  --color-surface: oklch(100% 0 0); /* cards, buttons, roads */
-  --color-fg: oklch(21% 0.032 265); /* primary text */
-  --color-muted: oklch(50.3% 0.026 257); /* secondary text, map labels */
-  --color-line: oklch(71.2% 0.019 253); /* rail, dividers, borders */
-  --color-accent: oklch(51.8% 0.182 258); /* selected, links, primary buttons */
-  --color-success: oklch(51.9% 0.139 147); /* on time */
-  --color-warning: oklch(53.9% 0.156 43); /* delayed */
+  /* Map areas */
+  --color-water: oklch(88% 0.04 255);
+  --color-land: oklch(97% 0.005 255); /* also page background */
+  --color-building: oklch(95% 0.005 255); /* built-up areas and buildings */
+
+  /* Map lines */
+  --color-road: oklch(100% 0 0); /* minor roads */
+  --color-road-major: oklch(100% 0 0); /* motorways and primary roads */
+  --color-rail: oklch(70% 0.02 255); /* railway network */
+  --color-boundary: oklch(80% 0.02 255); /* country borders */
+
+  /* Map labels */
+  --color-place-label: oklch(40% 0.03 255); /* city and town names */
+  --color-water-label: oklch(65% 0.06 255); /* sea and lake names */
+
+  /* Map trains */
+  --color-train: oklch(20% 0.03 255);
+  --color-train-stale: oklch(70% 0.02 255); /* not seen recently */
+
+  /* UI surfaces */
+  --color-surface: oklch(100% 0 0); /* cards, buttons */
+  --color-surface-hover: oklch(97% 0.005 255); /* hovered buttons */
+  --color-line: oklch(70% 0.02 255); /* dividers, borders */
+
+  /* UI text */
+  --color-fg: oklch(20% 0.03 255); /* primary text */
+  --color-muted: oklch(50% 0.025 255); /* secondary text */
+
+  /* UI accent and status */
+  --color-accent: oklch(50% 0.18 255); /* selected, links, primary buttons */
+  --color-success: oklch(50% 0.14 147); /* on time */
+  --color-warning: oklch(50% 0.155 43); /* delayed */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-page: oklch(19.3% 0.014 253);
-    --color-water: oklch(14.9% 0.012 260);
-    --color-surface: oklch(25.7% 0.022 254);
-    --color-fg: oklch(96.7% 0.003 265);
-    --color-muted: oklch(71.2% 0.019 253);
-    --color-line: oklch(45.7% 0.025 255);
-    --color-accent: oklch(68.5% 0.168 256);
-    --color-success: oklch(76.9% 0.152 156);
-    --color-warning: oklch(78.4% 0.133 44);
+    /* Map areas */
+    --color-water: oklch(12% 0.01 255);
+    --color-land: oklch(20% 0.015 255);
+    --color-building: oklch(22% 0.015 255);
+
+    /* Map lines */
+    --color-road: oklch(27% 0.02 255);
+    --color-road-major: oklch(30% 0.025 255);
+    --color-rail: oklch(50% 0.025 255);
+    --color-boundary: oklch(27% 0.025 255);
+
+    /* Map labels */
+    --color-place-label: oklch(80% 0.02 255);
+    --color-water-label: oklch(45% 0.03 255);
+
+    /* Map trains */
+    --color-train: oklch(97% 0.005 255);
+    --color-train-stale: oklch(55% 0.025 255);
+
+    /* UI surfaces */
+    --color-surface: oklch(26% 0.02 255);
+    --color-surface-hover: oklch(20% 0.015 255);
+    --color-line: oklch(45% 0.025 255);
+
+    /* UI text */
+    --color-fg: oklch(97% 0.005 255);
+    --color-muted: oklch(70% 0.02 255);
+
+    /* UI accent and status */
+    --color-accent: oklch(70% 0.17 255);
+    --color-success: oklch(75% 0.15 156);
+    --color-warning: oklch(80% 0.13 44);
   }
 }
 
@@ -33,7 +79,7 @@ body,
 }
 
 body {
-  background: var(--color-page);
+  background: var(--color-land);
   color: var(--color-fg);
   font-family: system-ui, sans-serif;
   overscroll-behavior: none;

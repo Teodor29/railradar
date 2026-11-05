@@ -34,7 +34,7 @@ export function MapButton({
   title,
 }: MapButtonProps) {
   const classes = [
-    "flex size-11 items-center justify-center transition-colors hover:bg-page disabled:opacity-40 cursor-pointer",
+    "flex size-11 items-center justify-center transition-colors hover:bg-surface-hover disabled:opacity-40 cursor-pointer",
     toneClasses[tone],
   ]
   if (busy) {

@@ -6,8 +6,11 @@ type SymbolLayout = NonNullable<Extract<LayerSpecification, { type: "symbol" }>[
 type Palette = {
   land: string
   water: string
+  building: string
   road: string
+  roadMajor: string
   rail: string
+  boundary: string
   label: string
   labelHalo: string
   waterLabel: string
@@ -34,13 +37,16 @@ export function readColor(variable: string): string {
 
 function readPalette(): Palette {
   return {
-    land: readColor("--color-page"),
+    land: readColor("--color-land"),
     water: readColor("--color-water"),
-    road: readColor("--color-surface"),
-    rail: readColor("--color-line"),
-    label: readColor("--color-muted"),
-    labelHalo: readColor("--color-page"),
-    waterLabel: readColor("--color-muted"),
+    building: readColor("--color-building"),
+    road: readColor("--color-road"),
+    roadMajor: readColor("--color-road-major"),
+    rail: readColor("--color-rail"),
+    boundary: readColor("--color-boundary"),
+    label: readColor("--color-place-label"),
+    labelHalo: readColor("--color-land"),
+    waterLabel: readColor("--color-water-label"),
   }
 }
 
@@ -65,16 +71,53 @@ function baseLayers(palette: Palette): LayerSpecification[] {
       paint: { "fill-color": palette.water },
     },
     {
-      id: "roads",
+      id: "boundaries",
+      type: "line",
+      source: SOURCE,
+      "source-layer": "boundary",
+      filter: ["all", ["==", ["get", "admin_level"], 2], ["!=", ["get", "maritime"], 1]],
+      paint: {
+        "line-color": palette.boundary,
+        "line-width": 1,
+        "line-dasharray": [3, 2],
+      },
+    },
+    {
+      id: "minor-roads",
       type: "line",
       source: SOURCE,
       "source-layer": "transportation",
-      minzoom: 6,
-      filter: ["match", ["get", "class"], ["motorway", "trunk", "primary"], true, false],
+      minzoom: 11,
+      filter: ["match", ["get", "class"], ["secondary", "tertiary", "minor"], true, false],
       layout: { "line-cap": "round", "line-join": "round" },
       paint: {
         "line-color": palette.road,
-        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 1, 12, 3, 16, 8],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 11, 0.5, 15, 4],
+      },
+    },
+    {
+      id: "major-roads",
+      type: "line",
+      source: SOURCE,
+      "source-layer": "transportation",
+      minzoom: 8,
+      filter: ["match", ["get", "class"], ["motorway", "trunk", "primary"], true, false],
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": palette.roadMajor,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 0.8, 10, 1.6, 15, 6],
+      },
+    },
+    {
+      id: "building",
+      type: "fill",
+      source: SOURCE,
+      "source-layer": "building",
+      minzoom: 13,
+      paint: {
+        "fill-color": palette.building,
+        "fill-outline-color": palette.boundary,
+        "fill-opacity": 0.8,
       },
     },
     {
@@ -83,10 +126,10 @@ function baseLayers(palette: Palette): LayerSpecification[] {
       source: SOURCE,
       "source-layer": "transportation",
       filter: ["all", ["==", ["get", "class"], "rail"], ["!", ["has", "service"]]],
-      layout: { "line-cap": "round", "line-join": "round" },
+      layout: { "line-join": "round" },
       paint: {
         "line-color": palette.rail,
-        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.75, 10, 1.5, 16, 3],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 1.1, 12, 1.8, 16, 3],
       },
     },
     {
@@ -98,8 +141,8 @@ function baseLayers(palette: Palette): LayerSpecification[] {
       layout: {
         "text-field": SWEDISH_NAME,
         "text-font": ["Noto Sans Italic"],
-        "text-size": 13,
-        "text-letter-spacing": 0.3,
+        "text-size": ["interpolate", ["linear"], ["zoom"], 5, 11, 10, 14],
+        "text-letter-spacing": 0.35,
       },
       paint: { "text-color": palette.waterLabel },
     },
@@ -112,13 +155,23 @@ function baseLayers(palette: Palette): LayerSpecification[] {
       layout: {
         "text-field": SWEDISH_NAME,
         "text-font": ["Noto Sans Regular"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 5, 11, 10, 14],
+        "text-size": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          5,
+          ["match", ["get", "class"], "city", 12, 10],
+          12,
+          14,
+        ],
         "symbol-sort-key": ["get", "rank"],
+        "text-padding": 8,
       },
       paint: {
         "text-color": palette.label,
+        "text-opacity": 0.75,
         "text-halo-color": palette.labelHalo,
-        "text-halo-width": 1.5,
+        "text-halo-width": 1.4,
       },
     },
   ]
