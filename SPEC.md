@@ -13,6 +13,7 @@ Live på `railradar.se`.
 - MapLibre GL med OpenFreeMap och en egen minimal stil i ljust och mörkt läge som följer systemet. Järnvägsnätet (`class=rail` i baskartan) ritas tydligt i grått. Det finns i baskartan först från zoom 8.
 - Alla tåg som rapporterar position och har annonserat tågnummer visas live och flyttas direkt till ny position när den kommer.
 - Fri navigering: panorera, zooma, klicka på vilket tåg som helst.
+- Kartvyn (position och zoom) sparas i localStorage, så man hamnar på samma ställe vid omladdning. Första gången visas hela Sverige.
 - Knapp för "Min position" (geolocation) som flyger till användaren och visar en prick. Zoomknappar på desktop.
 - Attribution för OpenStreetMap/OpenFreeMap och Trafikverket syns på kartan och fälls ihop till en knapp när man börjar använda kartan.
 

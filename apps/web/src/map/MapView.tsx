@@ -16,6 +16,36 @@ const SWEDEN_BOUNDS: [[number, number], [number, number]] = [
   [24.2, 69.1],
 ]
 
+const VIEW_KEY = "mapView"
+
+type SavedView = { center: [number, number]; zoom: number }
+
+function loadView(): SavedView | null {
+  try {
+    const raw = localStorage.getItem(VIEW_KEY)
+    if (!raw) {
+      return null
+    }
+    const view = JSON.parse(raw)
+    if (!Array.isArray(view.center) || typeof view.zoom !== "number") {
+      return null
+    }
+    return view
+  } catch {
+    return null
+  }
+}
+
+function saveView(map: MapLibreMap) {
+  const { lng, lat } = map.getCenter()
+  const view: SavedView = { center: [lng, lat], zoom: map.getZoom() }
+  try {
+    localStorage.setItem(VIEW_KEY, JSON.stringify(view))
+  } catch {
+    // Storage can be blocked (private mode etc.); the map works without it.
+  }
+}
+
 function applyTheme(map: MapLibreMap) {
   applyColors(map)
   applyTrainColors(map)
@@ -31,16 +61,17 @@ export function MapView({ store }: { store: TrainStore }) {
       return
     }
 
+    const savedView = loadView()
     const map = new MapLibreMap({
       container: containerRef.current,
       style: createStyle(),
-      bounds: SWEDEN_BOUNDS,
-      fitBoundsOptions: { padding: 16 },
+      ...(savedView ?? { bounds: SWEDEN_BOUNDS, fitBoundsOptions: { padding: 16 } }),
       attributionControl: false,
       dragRotate: false,
       pitchWithRotate: false,
     })
     map.touchZoomRotate.disableRotation()
+    map.on("moveend", () => saveView(map))
     mapRef.current = map
 
     let stopTrains: (() => void) | null = null
