@@ -196,9 +196,9 @@ type TrainState = {
 }
 ```
 
-**Drift:** frontend ligger på Vercel på `www.railradar.se`, så att den lilla VM:en slipper bygga den. `railradar.se` redirectar dit. Backend ligger på en x86-VM på Oracle Cloud Always Free (för att prova gratis, Hetzner är reservplan) med `docker compose`: `api`, `postgres`, `caddy`. Caddy proxar `api.railradar.se` till API:t och sköter HTTPS. API:t tillåter CORS från `https://www.railradar.se`, och frontend får API-adressen via `VITE_API_URL` vid bygget. DNS hos STRATO: `railradar.se` och `www.railradar.se` enligt Vercels instruktioner och A-post för `api.railradar.se` till VM:ens IP.
+**Drift:** frontend ligger på Vercel på `www.railradar.se`, så att den lilla VM:en slipper bygga den. `railradar.se` redirectar dit. Backend ligger på en x86-VM på Oracle Cloud Always Free (för att prova gratis, Hetzner är reservplan) med `docker compose`: `api`, `postgres`, `caddy`. Caddy proxar `api.railradar.se` till API:t och sköter HTTPS. API:t tillåter CORS från `https://www.railradar.se` och från projektets förhandsversioner på Vercel, och frontend får API-adressen via `VITE_API_URL` vid bygget. DNS hos STRATO: `railradar.se` och `www.railradar.se` enligt Vercels instruktioner och A-post för `api.railradar.se` till VM:ens IP.
 
-**Deploy:** Vercel bygger och deployar frontend vid push till `main`. GitHub Actions deployar API:t vid samma push: SSH till VM:en och kör `git pull --ff-only && docker compose up -d --build --remove-orphans`. Inget image registry i MVP. Workflowen använder GitHub-secrets `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY` och `DEPLOY_KNOWN_HOSTS`.
+**Deploy:** Vercel bygger och deployar frontend vid push till `main`. GitHub Actions kör CI på PR:er och vid push till `main`, och deployar API:t om CI går igenom: SSH till VM:en och kör `git pull --ff-only && docker compose up -d --build --remove-orphans`. Inget image registry i MVP. Workflowen använder GitHub-secrets `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY` och `DEPLOY_KNOWN_HOSTS`.
 
 **Hemligheter:** Trafikverkets API-nyckel och Postgres-lösenordet finns bara i `.env` på servern (se `.env.example`). Aldrig i frontend eller i git.
 

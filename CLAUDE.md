@@ -5,6 +5,7 @@ Livekarta över tåg i Sverige. `SPEC.md` är facit – uppdatera den när ett b
 ## Arbetssätt
 
 - Committa eller pusha aldrig. Användaren granskar och committar själv. Push till `main` deployar.
+- Större ändringar går via branch och PR, små fixar direkt till `main`.
 - Jobba i milstolpar (se SPEC). Avsluta varje med typecheck, tester och en körning av appen, och lämna sedan över för granskning.
 
 ## Struktur

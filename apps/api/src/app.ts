@@ -7,6 +7,15 @@ import { upstream } from "./upstream"
 
 // The frontend is hosted separately, on Vercel.
 const WEB_ORIGIN = "https://www.railradar.se"
+const PREVIEW_ORIGIN_PATTERN = /^https:\/\/railradar-[a-z0-9-]+-teodor29s-projects\.vercel\.app$/
+
+function getAllowedOrigin(origin: string | undefined): string {
+  if (origin && PREVIEW_ORIGIN_PATTERN.test(origin)) {
+    return origin
+  }
+
+  return WEB_ORIGIN
+}
 
 export function createApp(
   broadcaster: Broadcaster,
@@ -16,8 +25,9 @@ export function createApp(
   app.disable("x-powered-by")
 
   // Only GET without credentials is used, so there are no preflight requests to answer.
-  app.use((_req, res, next) => {
-    res.set("Access-Control-Allow-Origin", WEB_ORIGIN)
+  app.use((req, res, next) => {
+    res.set("Access-Control-Allow-Origin", getAllowedOrigin(req.headers.origin))
+    res.vary("Origin")
     next()
   })
 

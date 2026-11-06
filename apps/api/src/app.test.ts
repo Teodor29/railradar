@@ -58,11 +58,55 @@ describe("GET /api/trains/:id", () => {
   })
 
   it("passes on an upstream failure", async () => {
+    const consoleError = vi.spyOn(console, "error").mockImplementation(() => {})
+    const upstreamError = new HttpError(502, "upstream_error", "Could not fetch train")
+
     const response = await request(async () => {
-      throw new HttpError(502, "upstream_error", "Could not fetch train")
+      throw upstreamError
     })
 
     expect(response.status).toBe(502)
     expect(apiErrorSchema.parse(await response.json()).error.code).toBe("upstream_error")
+    expect(consoleError).toHaveBeenCalledWith(upstreamError)
+
+    consoleError.mockRestore()
+  })
+})
+
+describe("CORS", () => {
+  const PRODUCTION = "https://www.railradar.se"
+  const PREVIEW = "https://railradar-git-feat-info-panel-teodor29s-projects.vercel.app"
+  let server: Server
+
+  async function allowedOriginFor(origin: string): Promise<string | null> {
+    server = createApp(broadcaster, async () => null).listen(0)
+    await new Promise((resolve) => server.once("listening", resolve))
+
+    const { port } = server.address() as AddressInfo
+    const response = await fetch(`http://localhost:${port}/api/trains/2026-11-06-179`, {
+      headers: { Origin: origin },
+    })
+    return response.headers.get("access-control-allow-origin")
+  }
+
+  afterEach(() => {
+    server.close()
+  })
+
+  it("allows the production site", async () => {
+    expect(await allowedOriginFor(PRODUCTION)).toBe(PRODUCTION)
+  })
+
+  it("allows the project's Vercel previews", async () => {
+    expect(await allowedOriginFor(PREVIEW)).toBe(PREVIEW)
+  })
+
+  it.each([
+    "https://evil.example",
+    "https://railradar-evil.vercel.app",
+    "https://railradar-x-teodor29s-projects.vercel.app.evil.example",
+    "http://railradar-x-teodor29s-projects.vercel.app",
+  ])("doesn't allow %s", async (origin) => {
+    expect(await allowedOriginFor(origin)).toBe(PRODUCTION)
   })
 })
