@@ -57,15 +57,11 @@ export function parseResponse(json: unknown): {
   return { positions, sseUrl: result.INFO?.SSEURL ?? null }
 }
 
-export async function queryTrainPositions(
-  apiKey: string,
-  since: Date,
-  signal: AbortSignal,
-): Promise<{ positions: TrainPosition[]; sseUrl: string }> {
+export async function postQuery(body: string, signal: AbortSignal): Promise<unknown> {
   const response = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/xml" },
-    body: buildQuery(apiKey, since),
+    body,
     signal: AbortSignal.any([signal, AbortSignal.timeout(QUERY_TIMEOUT_MS)]),
   })
   if (!response.ok) {
@@ -73,7 +69,15 @@ export async function queryTrainPositions(
     throw new Error(`Trafikverket query failed with ${response.status}: ${text.slice(0, 500)}`)
   }
 
-  const { positions, sseUrl } = parseResponse(await response.json())
+  return response.json()
+}
+
+export async function queryTrainPositions(
+  apiKey: string,
+  since: Date,
+  signal: AbortSignal,
+): Promise<{ positions: TrainPosition[]; sseUrl: string }> {
+  const { positions, sseUrl } = parseResponse(await postQuery(buildQuery(apiKey, since), signal))
   if (!sseUrl) throw new Error("Trafikverket response has no SSE URL")
 
   return { positions, sseUrl }
@@ -97,7 +101,7 @@ export async function* streamTrainPositions(
   }
 }
 
-function escapeXml(value: string): string {
+export function escapeXml(value: string): string {
   return value
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")

@@ -1,0 +1,371 @@
+{
+  "RESPONSE": {
+    "RESULT": [
+      {
+        "TrainStation": [
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Alingsås",
+            "AdvertisedShortLocationName": "Alingsås",
+            "PrimaryLocationCode": "119",
+            "CountryCode": "SE",
+            "CountyNo": [14],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (353852 6423240)",
+              "WGS84": "POINT (12.532185446104254 57.92690516743591)"
+            },
+            "LocationInformationText": "Spåruppgifterna är preliminära och kan ändras.",
+            "LocationSignature": "A",
+            "PlatformLine": ["1", "2", "3", "4"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Alingsås",
+            "ModifiedTime": "2026-06-03T11:10:25.300Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Arbrå",
+            "AdvertisedShortLocationName": "Arbrå",
+            "PrimaryLocationCode": "169",
+            "CountryCode": "SE",
+            "CountyNo": [21],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (573518 6816033)",
+              "WGS84": "POINT (16.379834602609762 61.47103478880923)"
+            },
+            "LocationSignature": "Ab",
+            "PlatformLine": ["1"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Arbrå",
+            "ModifiedTime": "2026-06-03T11:10:25.301Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Avesta centrum",
+            "AdvertisedShortLocationName": "Avesta centrum",
+            "PrimaryLocationCode": "10020",
+            "CountryCode": "SE",
+            "CountyNo": [20],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (565001 6668391)",
+              "WGS84": "POINT (16.170606923162723 60.14729303062647)"
+            },
+            "LocationSignature": "Acm",
+            "PlatformLine": ["1"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Avesta centrum",
+            "ModifiedTime": "2026-06-03T11:10:25.302Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Anneberg",
+            "AdvertisedShortLocationName": "Anneberg",
+            "PrimaryLocationCode": "155",
+            "CountryCode": "SE",
+            "CountyNo": [13],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (326462 6381052)",
+              "WGS84": "POINT (12.100776421963255 57.53862892560069)"
+            },
+            "LocationInformationText": "Spåruppgifterna är preliminära och kan ändras.",
+            "LocationSignature": "Ag",
+            "PlatformLine": ["1", "2"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Anneberg",
+            "ModifiedTime": "2026-06-03T11:10:25.303Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Arvidsjaur",
+            "AdvertisedShortLocationName": "Arvidsjaur",
+            "PrimaryLocationCode": "185",
+            "CountryCode": "SE",
+            "CountyNo": [25],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (692122 7280435)",
+              "WGS84": "POINT (19.168451944017022 65.5887057518446)"
+            },
+            "LocationSignature": "Ajr",
+            "PlatformLine": ["3"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Arvidsjaur",
+            "ModifiedTime": "2026-06-03T11:10:25.305Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Abisko Östra",
+            "AdvertisedShortLocationName": "Abisko Ö",
+            "PrimaryLocationCode": "106",
+            "CountryCode": "SE",
+            "CountyNo": [25],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (657629 7586635)",
+              "WGS84": "POINT (18.83034620604857 68.34864107860172)"
+            },
+            "LocationInformationText": "Spåruppgifterna är preliminära och kan ändras.",
+            "LocationSignature": "Ak",
+            "PlatformLine": ["2", "3"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Abisko östra",
+            "ModifiedTime": "2026-06-03T11:10:25.306Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Abisko turiststation",
+            "AdvertisedShortLocationName": "Abisko turist",
+            "PrimaryLocationCode": "105",
+            "CountryCode": "SE",
+            "CountyNo": [25],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (655634 7587481)",
+              "WGS84": "POINT (18.78326034400672 68.35731623870603)"
+            },
+            "LocationSignature": "Akt",
+            "PlatformLine": ["1"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Abisko turiststation",
+            "ModifiedTime": "2026-06-03T11:10:25.307Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Astrid Lindgrens värld",
+            "AdvertisedShortLocationName": "A. Lindgrens värld",
+            "PrimaryLocationCode": "10018",
+            "CountryCode": "SE",
+            "CountyNo": [8],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (550107 6392583)",
+              "WGS84": "POINT (15.840063935575104 57.67270729348377)"
+            },
+            "LocationSignature": "Alv",
+            "PlatformLine": ["1"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Astrid Lindgrens värld",
+            "ModifiedTime": "2026-06-03T11:10:25.308Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Aneby",
+            "AdvertisedShortLocationName": "Aneby",
+            "PrimaryLocationCode": "151",
+            "CountryCode": "SE",
+            "CountyNo": [6],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (488831 6410627)",
+              "WGS84": "POINT (14.811896253047214 57.83743457399663)"
+            },
+            "LocationInformationText": "Spåruppgifterna är preliminära och kan ändras.",
+            "LocationSignature": "Any",
+            "PlatformLine": ["1", "2"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Aneby",
+            "ModifiedTime": "2026-06-03T11:10:25.310Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Aspen",
+            "AdvertisedShortLocationName": "Aspen",
+            "PrimaryLocationCode": "203",
+            "CountryCode": "SE",
+            "CountyNo": [14],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (335801 6404715)",
+              "WGS84": "POINT (12.240512226679396 57.7544220544198)"
+            },
+            "LocationInformationText": "Spåruppgifterna är preliminära och kan ändras.",
+            "LocationSignature": "Apn",
+            "PlatformLine": ["1", "2"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Aspen",
+            "ModifiedTime": "2026-06-03T11:10:25.311Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Arvika",
+            "AdvertisedShortLocationName": "Arvika",
+            "PrimaryLocationCode": "186",
+            "CountryCode": "SE",
+            "CountyNo": [17],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (364238 6615302)",
+              "WGS84": "POINT (12.590803362488185 59.653634160114606)"
+            },
+            "LocationInformationText": "Spåruppgifterna är preliminära och kan ändras.",
+            "LocationSignature": "Ar",
+            "PlatformLine": ["1", "2", "3"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Arvika",
+            "ModifiedTime": "2026-06-03T11:10:25.312Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Arboga",
+            "AdvertisedShortLocationName": "Arboga",
+            "PrimaryLocationCode": "167",
+            "CountryCode": "SE",
+            "CountyNo": [19],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (547732 6584582)",
+              "WGS84": "POINT (15.840525562859774 59.39718938471843)"
+            },
+            "LocationInformationText": "Spåruppgifterna är preliminära och kan ändras.",
+            "LocationSignature": "Arb",
+            "PlatformLine": ["1", "2", "3"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Arboga",
+            "ModifiedTime": "2026-06-03T11:10:25.313Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Arlanda C",
+            "AdvertisedShortLocationName": "Arlanda C",
+            "PrimaryLocationCode": "194",
+            "CountryCode": "SE",
+            "CountyNo": [1, 2],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (665036 6615971)",
+              "WGS84": "POINT (17.928489376767153 59.6490721184725)"
+            },
+            "LocationInformationText": "<div class=\"textLinks\">Flygläget vid Arlanda: <a runat=\"server\" id=\"lank\" title=\"Länk till Swedavias sida för information om ankomster och avgångar\" href=\"http://www.swedavia.se/arlanda\" target=\"_blank\">Swedavia</a></div> <BR> Spåruppgifterna är preliminära och kan ändras. ",
+            "LocationSignature": "Arnc",
+            "PlatformLine": ["1", "2"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Arlanda central",
+            "ModifiedTime": "2026-06-03T11:10:25.313Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Arlanda N",
+            "AdvertisedShortLocationName": "Arlanda N",
+            "PrimaryLocationCode": "227",
+            "CountryCode": "SE",
+            "CountyNo": [1, 2],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (665100 6616247)",
+              "WGS84": "POINT (17.929839276186385 59.65152194459551)"
+            },
+            "LocationSignature": "Arnn",
+            "PlatformLine": ["6", "7"],
+            "Prognosticated": false,
+            "OfficialLocationName": "Arlanda norra",
+            "ModifiedTime": "2026-06-03T11:10:25.314Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Arlanda S",
+            "AdvertisedShortLocationName": "Arlanda S",
+            "PrimaryLocationCode": "10012",
+            "CountryCode": "SE",
+            "CountyNo": [1, 2],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (665038 6615720)",
+              "WGS84": "POINT (17.928328505991374 59.64682035496466)"
+            },
+            "LocationSignature": "Arns",
+            "PlatformLine": ["4", "5"],
+            "Prognosticated": false,
+            "OfficialLocationName": "Arlanda södra",
+            "ModifiedTime": "2026-06-03T11:10:25.315Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Assberg",
+            "AdvertisedShortLocationName": "Assberg",
+            "PrimaryLocationCode": "205",
+            "CountryCode": "SE",
+            "CountyNo": [14],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (360272 6374815)",
+              "WGS84": "POINT (12.668601515725362 57.494351719283884)"
+            },
+            "LocationSignature": "Asb",
+            "PlatformLine": ["1"],
+            "Prognosticated": true,
+            "OfficialLocationName": "Assberg",
+            "ModifiedTime": "2026-06-03T11:10:25.315Z"
+          },
+          {
+            "Advertised": false,
+            "AdvertisedLocationName": "Annedal",
+            "AdvertisedShortLocationName": "Annedal",
+            "PrimaryLocationCode": "10008",
+            "CountryCode": "SE",
+            "CountyNo": [12],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (371312 6222207)",
+              "WGS84": "POINT (12.92963400546102 56.12755457717494)"
+            },
+            "LocationSignature": "Aal",
+            "Prognosticated": false,
+            "OfficialLocationName": "Annedal",
+            "ModifiedTime": "2026-06-03T11:10:25.301Z"
+          },
+          {
+            "Advertised": false,
+            "AdvertisedLocationName": "Abborrträsk",
+            "AdvertisedShortLocationName": "Abborrträsk",
+            "CountryCode": "SE",
+            "CountyNo": [25],
+            "Deleted": false,
+            "Geometry": {
+              "SWEREF99TM": "POINT (704378 7265372)",
+              "WGS84": "POINT (19.410574888035853 65.44645107513166)"
+            },
+            "LocationSignature": "Abb",
+            "Prognosticated": false,
+            "OfficialLocationName": "Abborrträsk",
+            "ModifiedTime": "2026-06-03T11:10:25.301Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Bad Gastein",
+            "AdvertisedShortLocationName": "Bad Gastein",
+            "PrimaryLocationCode": "2117",
+            "CountryCode": "AT",
+            "Deleted": false,
+            "Geometry": {
+              "WGS84": "POINT (13.13198799875665 47.11182000332733)"
+            },
+            "LocationInformationText": "För den här stationen visas aldrig information om eventuella förseningar eller inställda tåg",
+            "LocationSignature": "At.bad",
+            "Prognosticated": false,
+            "OfficialLocationName": "Bad Gastein",
+            "ModifiedTime": "2026-06-03T11:10:25.316Z"
+          },
+          {
+            "Advertised": true,
+            "AdvertisedLocationName": "Innsbruck",
+            "AdvertisedShortLocationName": "Innsbruck",
+            "PrimaryLocationCode": "1187",
+            "CountryCode": "AT",
+            "Deleted": false,
+            "Geometry": {
+              "WGS84": "POINT (11.401397005325137 47.264537001407085)"
+            },
+            "LocationInformationText": "För den här stationen visas aldrig information om eventuella förseningar eller inställda tåg",
+            "LocationSignature": "At.inn",
+            "Prognosticated": false,
+            "OfficialLocationName": "Innsbruck",
+            "ModifiedTime": "2026-06-03T11:10:25.316Z"
+          }
+        ]
+      }
+    ]
+  }
+}
