@@ -1,0 +1,2073 @@
+{
+  "RESPONSE": {
+    "RESULT": [
+      {
+        "TrainAnnouncement": [
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-05T23:54:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Bål",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-05T23:58:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-05T23:59:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T00:03:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Bro",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:02:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-05T23:59:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:03:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Bro",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:03:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:05:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T00:07:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Kän",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:07:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:05:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:07:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Kän",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:08:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:09:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T00:12:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Khä",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:11:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:10:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:12:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Khä",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:12:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:13:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T00:14:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Jkb",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:14:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:13:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:14:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Jkb",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:15:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:16:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T00:18:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Bkb",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:17:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:16:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:18:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Bkb",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:18:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:20:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Spå",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:19:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:20:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Spå",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:21:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:25:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Sub",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:25:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:26:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Sub",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:26:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:31:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Sod",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:30:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:31:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              },
+              {
+                "Code": "ANA012",
+                "Description": "Dörr 2-13"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Sod",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:31:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:39:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T00:42:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Sst",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:42:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:39:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:42:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Sst",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:43:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:42:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T00:45:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Åbe",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:45:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:42:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:45:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Åbe",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:49:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:51:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T00:58:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Fas",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:57:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:51:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:58:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Fas",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:58:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:53:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:00:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Tåd",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:00:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:53:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:00:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Tåd",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:01:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:56:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:03:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Skg",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:03:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:56:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:03:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Skg",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:03:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:00:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:06:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Vga",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:05:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:00:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:06:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Vga",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:06:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:03:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:08:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Hnd",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:08:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:03:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:08:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Hnd",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:09:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:06:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:11:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Jbo",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:10:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:06:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:11:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Jbo",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:11:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:09:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:13:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Vhe",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:13:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:12:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:13:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Vhe",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:15:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:15:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:17:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Kda",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:17:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:15:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:17:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Kda",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:18:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:17:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:20:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Ts",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:19:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:17:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:20:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Ts",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:20:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:21:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:23:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Hfa",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:23:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:21:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:23:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Hfa",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:24:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:25:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:27:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Ssä",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:27:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:25:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:27:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Ssä",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:28:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:29:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:32:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Öso",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:31:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:30:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:32:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Öso",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:32:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:36:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:38:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Ngd",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:38:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:39:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:40:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Gdv",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:40:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:36:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:38:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Ngd",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:39:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:39:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T01:40:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Gdv",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:41:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T01:41:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T01:43:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Nyc",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T01:43:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1b"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:34:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T00:37:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Sci",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:37:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:36:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              },
+              {
+                "Code": "ANA012",
+                "Description": "Dörr 2-13"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:37:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Sci",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:40:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:45:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA055",
+                "Description": "Spårändrat"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:52:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Äs",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:52:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "7"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T00:45:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA055",
+                "Description": "Spårändrat"
+              },
+              {
+                "Code": "ANA031",
+                "Description": "Kort tåg"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T00:52:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Bål",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "SL",
+            "LocationSignature": "Äs",
+            "ProductInformation": [
+              {
+                "Code": "PNA054",
+                "Description": "SL Pendeltåg"
+              },
+              {
+                "Code": "PNA091",
+                "Description": "43"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T00:53:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Nyc",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "7"
+          }
+        ]
+      }
+    ]
+  }
+}

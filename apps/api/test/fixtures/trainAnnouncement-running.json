@@ -1,0 +1,1940 @@
+{
+  "RESPONSE": {
+    "RESULT": [
+      {
+        "TrainAnnouncement": [
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T12:35:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Si",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T12:35:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T12:42:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Gss",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T12:42:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T12:43:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Gss",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T12:44:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T12:47:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Smp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T12:46:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T12:47:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Smp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T12:47:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T12:51:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Lup",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T12:50:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T12:51:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Lup",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T12:51:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T12:56:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Tli",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T12:55:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:01:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Tli",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:01:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:08:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Köp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:06:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:08:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Köp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:08:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:14:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Y",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:12:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3b"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:16:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Y",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:16:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3b"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:21:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Ste",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:20:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:21:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Ste",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:21:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:29:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Rdg",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:27:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:29:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Rdg",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:30:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:34:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Srp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:33:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:34:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Srp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:34:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:44:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Sea",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:43:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:44:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "EstimatedTimeAtLocation": "2026-11-06T13:49:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Sea",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T13:55:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:50:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:05:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Ox",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:05:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:50:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:05:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Ox",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:06:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T13:59:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:12:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Hie",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:12:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3a"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:00:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:12:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Hie",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:14:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3a"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:03:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:17:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Tri",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:17:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:03:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:17:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Tri",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:19:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:07:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:21:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Mc",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:21:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3a"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:09:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:21:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Mc",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:25:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3a"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:14:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:33:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Blv",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:32:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "4"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:14:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:33:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Blv",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:34:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "4"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:17:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:36:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Åk",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:35:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "4"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:17:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:36:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Åk",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:37:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "4"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:20:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:38:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Hjp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:39:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "4"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:20:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:38:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Hjp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:40:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "4"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:23:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:42:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Kgå",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:41:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "4"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:23:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:42:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Kgå",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:43:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "4"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:26:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:45:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Lu",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:45:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "5"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:28:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:45:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Lu",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:48:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "5"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:31:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:50:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Gnb",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:49:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:31:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:50:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Gnb",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:51:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:36:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:56:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Kg",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:55:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:58:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:17:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Ryä",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:58:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:17:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Ryä",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T15:03:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:22:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Hbgb",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T15:03:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:22:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Hbgb",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "2"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:36:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T14:56:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Kg",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T14:57:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:50:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA055",
+                "Description": "Spårändrat"
+              },
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:11:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Lkö",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:41:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:01:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Dös",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T15:00:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:41:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:01:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Dös",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T15:01:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T15:08:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA055",
+                "Description": "Spårändrat"
+              },
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:26:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Hb",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1b"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:46:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:06:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Häp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T15:05:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:46:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:06:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Häp",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T15:07:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:50:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA055",
+                "Description": "Spårändrat"
+              },
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:08:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Lkö",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "TimeAtLocation": "2026-11-06T15:09:00.000+01:00",
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:55:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:16:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Glv",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T14:55:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA040",
+                "Description": "Obeh. i spår"
+              }
+            ],
+            "EstimatedTimeAtLocation": "2026-11-06T15:16:00.000+01:00",
+            "FromLocation": [
+              {
+                "LocationName": "Si",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Skånetrafiken",
+            "LocationSignature": "Glv",
+            "ProductInformation": [
+              {
+                "Code": "PNA020",
+                "Description": "Pågatågen"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hb",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "1"
+          }
+        ]
+      }
+    ]
+  }
+}

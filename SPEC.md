@@ -36,7 +36,7 @@ Panelen har två lägen: kompakt (öppnas direkt) och expanderad. Visa bara fäl
 
 - Tågnummer, produkt och operatör (t.ex. "Öresundståg, Skånetrafiken")
 - Från → till
-- Status: inställt eller senast sett (se nedan)
+- Status: inställt, delvis inställt eller senast sett (se nedan)
 - Försening i minuter
 - Hastighet (saknas för många tåg, visas bara när den finns)
 - Nästa station med tid och spår
@@ -44,14 +44,14 @@ Panelen har två lägen: kompakt (öppnas direkt) och expanderad. Visa bara fäl
 
 **Expanderad:**
 
-- Stopplista: alla annonserade stationer med planerad, beräknad och faktisk tid, spår, och markering av passerade stationer
+- Stopplista: alla annonserade stationer med planerad, beräknad och faktisk tid, spår, och markering av passerade och inställda stationer
 - Övrig information från Trafikverket
 
 ### Status
 
 I MVP visas bara det som går att läsa direkt ur Trafikverkets data. Ingen egen statuslogik på servern.
 
-- **Inställt:** `Canceled` från `TrainAnnouncement`, så det är bara känt när tåget har öppnats.
+- **Inställt:** `Canceled` från `TrainAnnouncement` gäller per stopp. Tåget är inställt när alla stopp är inställda och delvis inställt när bara vissa är det. Det är bara känt när tåget har öppnats.
 - **Senast sett:** senaste position äldre än 2 min. Tåget ligger kvar på kartan men nedtonat. Frontend räknar ut det från `measuredAt`.
 
 Ett tåg tas bort från kartan (`remove`) när Trafikverket markerar positionen som raderad (`Deleted`) eller inaktiv (`Status.Active = false`), eller när senaste position är äldre än 30 min.
@@ -94,7 +94,7 @@ Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health`
 
 **Klart när:** tågen uppdateras live på kartan i webbläsaren, både på mobil och på desktop.
 
-### 4. Drift
+### 4. Drift ✅
 
 - Dockerfile och `docker-compose.yml` med `api`, `postgres` och `caddy`
 - Caddy proxar `api.railradar.se` till API:t och sköter HTTPS
@@ -104,7 +104,7 @@ Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health`
 
 **Klart när:** livekartan fungerar på `https://railradar.se`.
 
-### 5. Stationer
+### 5. Stationer ✅
 
 - zod-schema för `TrainStation`
 - Synk till Postgres vid start om tabellen är tom och sedan en gång per dygn

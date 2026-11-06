@@ -1,0 +1,463 @@
+{
+  "RESPONSE": {
+    "RESULT": [
+      {
+        "TrainAnnouncement": [
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T23:28:00.000+01:00",
+            "Canceled": true,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA007",
+                "Description": "Buss ersätter"
+              },
+              {
+                "Code": "ANA003",
+                "Description": "Banarbete"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Cst",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "x"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T23:38:00.000+01:00",
+            "Canceled": true,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA007",
+                "Description": "Buss ersätter"
+              },
+              {
+                "Code": "ANA003",
+                "Description": "Banarbete"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Flb",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "x"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T23:38:00.000+01:00",
+            "Canceled": true,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA007",
+                "Description": "Buss ersätter"
+              },
+              {
+                "Code": "ANA003",
+                "Description": "Banarbete"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Flb",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "x"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-06T23:49:00.000+01:00",
+            "Canceled": true,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA007",
+                "Description": "Buss ersätter"
+              },
+              {
+                "Code": "ANA003",
+                "Description": "Banarbete"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Söö",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "x"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-06T23:49:00.000+01:00",
+            "Canceled": true,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA007",
+                "Description": "Buss ersätter"
+              },
+              {
+                "Code": "ANA003",
+                "Description": "Banarbete"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Söö",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "x"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-07T00:03:00.000+01:00",
+            "Canceled": true,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA007",
+                "Description": "Buss ersätter"
+              },
+              {
+                "Code": "ANA003",
+                "Description": "Banarbete"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Gn",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "x"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-07T00:03:00.000+01:00",
+            "Canceled": true,
+            "Deleted": false,
+            "Deviation": [
+              {
+                "Code": "ANA007",
+                "Description": "Buss ersätter"
+              },
+              {
+                "Code": "ANA003",
+                "Description": "Banarbete"
+              }
+            ],
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Gn",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "x"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-07T00:24:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Fle",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-07T00:37:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "K",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-07T00:38:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "K",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-07T00:50:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Vr",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Avgang",
+            "AdvertisedTimeAtLocation": "2026-11-07T01:18:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Vr",
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "3"
+          },
+          {
+            "ActivityType": "Ankomst",
+            "AdvertisedTimeAtLocation": "2026-11-07T01:37:00.000+01:00",
+            "Canceled": false,
+            "Deleted": false,
+            "FromLocation": [
+              {
+                "LocationName": "Cst",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "InformationOwner": "Mälardalstrafik AB",
+            "LocationSignature": "Hpbg",
+            "OtherInformation": [
+              {
+                "Code": "ONA080",
+                "Description": "Ingen påstigning."
+              }
+            ],
+            "ProductInformation": [
+              {
+                "Code": "PNA014",
+                "Description": "Mälartåg"
+              }
+            ],
+            "ToLocation": [
+              {
+                "LocationName": "Hpbg",
+                "Priority": 1,
+                "Order": 0
+              }
+            ],
+            "TrackAtLocation": "4"
+          }
+        ]
+      }
+    ]
+  }
+}
