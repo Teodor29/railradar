@@ -86,6 +86,7 @@ describe("GET /api/stream", () => {
   it("sends a snapshot, then batched updates and removals", async () => {
     const response = await fetch(`${baseUrl}/api/stream`)
     expect(response.headers.get("content-type")).toContain("text/event-stream")
+    expect(response.headers.get("access-control-allow-origin")).toBe("https://railradar.se")
 
     const reader = response.body!.getReader()
     const [snapshot] = await readEvents(reader, 1)

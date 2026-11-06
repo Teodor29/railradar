@@ -3,7 +3,9 @@ import { Attribution } from "./map/Attribution"
 import { MapView } from "./map/MapView"
 import { TrainStore } from "./trains/store"
 
-const trainStore = new TrainStore("/api/stream")
+// Empty in development, where Vite proxies /api to the local API.
+const apiUrl: string = import.meta.env.VITE_API_URL ?? ""
+const trainStore = new TrainStore(`${apiUrl}/api/stream`)
 
 export function App() {
   useEffect(() => {

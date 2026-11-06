@@ -5,9 +5,18 @@ import { errorHandler, notFound } from "./errors"
 import type { Broadcaster } from "./stream/broadcaster"
 import { upstream } from "./upstream"
 
+// The frontend is hosted separately, on Vercel.
+const WEB_ORIGIN = "https://railradar.se"
+
 export function createApp(broadcaster: Broadcaster) {
   const app = express()
   app.disable("x-powered-by")
+
+  // Only GET without credentials is used, so there are no preflight requests to answer.
+  app.use((_req, res, next) => {
+    res.set("Access-Control-Allow-Origin", WEB_ORIGIN)
+    next()
+  })
 
   app.get("/api/health", async (_req, res) => {
     const dbOk = await pingDb()

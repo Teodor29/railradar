@@ -12,6 +12,7 @@ Livekarta över tåg i Sverige. `SPEC.md` är facit – uppdatera den när ett b
 - `apps/api` – Express + TS. Körs med `tsx`. Migrationer i `apps/api/migrations/NNN_namn.sql` körs vid start.
 - `apps/web` – React + Vite + Tailwind v4 (+ MapLibre). Vite proxar `/api` till `:3000`.
 - `packages/shared` – zod-scheman och typer för SSE-payload och API-svar. Exporterar TS-källkod direkt (ingen build).
+- `Dockerfile`, `docker-compose.yml`, `Caddyfile` – produktion av API:t (Oracle). `docker-compose.dev.yml` – bara Postgres för lokal utveckling. Frontend deployas av Vercel.
 
 ## Kommandon (Node 26, se `.nvmrc`)
 

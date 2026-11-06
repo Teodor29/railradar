@@ -96,10 +96,11 @@ Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health`
 
 ### 4. Drift
 
-- Multi-stage Dockerfile, `docker-compose.yml` med `api`, `postgres` och `caddy`
-- Caddy serverar frontend, proxar `/api` och sköter HTTPS
-- GitHub Actions som deployar vid push till `main`
-- DNS för `railradar.se`
+- Dockerfile och `docker-compose.yml` med `api`, `postgres` och `caddy`
+- Caddy proxar `api.railradar.se` till API:t och sköter HTTPS
+- Frontend på Vercel, kopplat till GitHub
+- GitHub Actions som deployar API:t vid push till `main`
+- DNS för `railradar.se` och `api.railradar.se`
 
 **Klart när:** livekartan fungerar på `https://railradar.se`.
 
@@ -195,11 +196,11 @@ type TrainState = {
 }
 ```
 
-**Drift:** en Hetzner-VPS med `docker compose`: `api`, `postgres`, `caddy`. Caddy serverar frontend och proxar `/api` på samma domän och sköter HTTPS. Frontend byggs i en multi-stage Dockerfile och den byggda `dist/` serveras av Caddy. DNS hos STRATO: A-post för `railradar.se` till VPS:ens IP.
+**Drift:** frontend ligger på Vercel på `railradar.se`, så att den lilla VM:en slipper bygga den. Backend ligger på en x86-VM på Oracle Cloud Always Free (för att prova gratis, Hetzner är reservplan) med `docker compose`: `api`, `postgres`, `caddy`. Caddy proxar `api.railradar.se` till API:t och sköter HTTPS. API:t tillåter CORS från `https://railradar.se`, och frontend får API-adressen via `VITE_API_URL` vid bygget. DNS hos STRATO: `railradar.se` enligt Vercels instruktioner och A-post för `api.railradar.se` till VM:ens IP.
 
-**Deploy:** GitHub Actions vid push till `main`: SSH till VPS:en och kör `git pull && docker compose up -d --build`. Inget image registry i MVP.
+**Deploy:** Vercel bygger och deployar frontend vid push till `main`. GitHub Actions deployar API:t vid samma push: SSH till VM:en och kör `git pull --ff-only && docker compose up -d --build --remove-orphans`. Inget image registry i MVP. Workflowen använder GitHub-secrets `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY` och `DEPLOY_KNOWN_HOSTS`.
 
-**Hemligheter:** Trafikverkets API-nyckel finns bara i backendens `.env` på servern och som GitHub-secret vid behov. Aldrig i frontend eller i git.
+**Hemligheter:** Trafikverkets API-nyckel och Postgres-lösenordet finns bara i `.env` på servern (se `.env.example`). Aldrig i frontend eller i git.
 
 ## Datamodell (Postgres)
 
