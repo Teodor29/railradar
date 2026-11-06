@@ -48,7 +48,7 @@ describe("GET /api/stream", () => {
     store.takeChanges()
 
     broadcaster = startBroadcast(store)
-    const server = createApp(broadcaster).listen(0)
+    const server = createApp(broadcaster, async () => null).listen(0)
     await new Promise((resolve) => server.once("listening", resolve))
 
     baseUrl = `http://localhost:${(server.address() as AddressInfo).port}`

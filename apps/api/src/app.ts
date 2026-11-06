@@ -1,14 +1,17 @@
 import express from "express"
-import type { Health } from "@railradar/shared"
+import type { Health, TrainDetails } from "@railradar/shared"
 import { pingDb } from "./db/pool"
-import { errorHandler, notFound } from "./errors"
+import { errorHandler, HttpError, notFound } from "./errors"
 import type { Broadcaster } from "./stream/broadcaster"
 import { upstream } from "./upstream"
 
 // The frontend is hosted separately, on Vercel.
 const WEB_ORIGIN = "https://www.railradar.se"
 
-export function createApp(broadcaster: Broadcaster) {
+export function createApp(
+  broadcaster: Broadcaster,
+  getTrainDetails: (id: string) => Promise<TrainDetails | null>,
+) {
   const app = express()
   app.disable("x-powered-by")
 
@@ -46,6 +49,14 @@ export function createApp(broadcaster: Broadcaster) {
     })
     res.flushHeaders()
     broadcaster.addClient(res)
+  })
+
+  app.get("/api/trains/:id", async (req, res) => {
+    const details = await getTrainDetails(req.params.id)
+    if (!details) {
+      throw new HttpError(404, "train_not_found", "Train not found")
+    }
+    res.json(details)
   })
 
   app.use(notFound)

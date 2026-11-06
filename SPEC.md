@@ -30,7 +30,7 @@ Live på `railradar.se`.
 
 ### Infopanel
 
-Panelen har två lägen: kompakt (öppnas direkt) och expanderad. Visa bara fält som faktiskt finns för tåget.
+Panelen har två lägen: kompakt (öppnas direkt) och expanderad. Visa bara fält som faktiskt finns för tåget. Tåg utan annonserad tidtabell visar bara tågnummer, hastighet och "Ingen tidtabell tillgänglig".
 
 **Kompakt:**
 

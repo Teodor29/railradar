@@ -97,6 +97,12 @@ function toOptionalDate(value: string | undefined): Date | null {
   return new Date(value)
 }
 
+// Trafikverket sends "x" when there's no track, e.g. on every canceled row.
+function toTrack(value: string | undefined): string | null {
+  if (!value || value === "x") return null
+  return value
+}
+
 export function toAnnouncement(trainAnnouncement: TrainAnnouncement): Announcement {
   const productParts = descriptions(trainAnnouncement.ProductInformation)
 
@@ -106,7 +112,7 @@ export function toAnnouncement(trainAnnouncement: TrainAnnouncement): Announceme
     advertisedAt: new Date(trainAnnouncement.AdvertisedTimeAtLocation),
     estimatedAt: toOptionalDate(trainAnnouncement.EstimatedTimeAtLocation),
     actualAt: toOptionalDate(trainAnnouncement.TimeAtLocation),
-    track: trainAnnouncement.TrackAtLocation ?? null,
+    track: toTrack(trainAnnouncement.TrackAtLocation),
     canceled: trainAnnouncement.Canceled,
     product: productParts.length > 0 ? productParts.join(" ") : null,
     // InformationOwner is the name passengers know (Skånetrafiken), Operator the contractor (ARRIVA).

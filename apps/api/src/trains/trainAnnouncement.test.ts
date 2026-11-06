@@ -75,6 +75,10 @@ describe("toAnnouncement", () => {
     })
   })
 
+  it("treats track x as no track", () => {
+    expect(toAnnouncement({ ...base, TrackAtLocation: "x" }).track).toBeNull()
+  })
+
   it("uses null and empty lists for missing fields", () => {
     const announcement = toAnnouncement({ ...base, ActivityType: "Ankomst" })
 
