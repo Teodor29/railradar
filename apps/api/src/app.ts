@@ -6,7 +6,7 @@ import type { Broadcaster } from "./stream/broadcaster"
 import { upstream } from "./upstream"
 
 // The frontend is hosted separately, on Vercel.
-const WEB_ORIGIN = "https://railradar.se"
+const WEB_ORIGIN = "https://www.railradar.se"
 
 export function createApp(broadcaster: Broadcaster) {
   const app = express()
