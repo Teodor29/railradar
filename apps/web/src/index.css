@@ -19,6 +19,7 @@
   /* Map trains */
   --color-train: oklch(20% 0.03 255);
   --color-train-stale: oklch(70% 0.02 255); /* not seen recently */
+  --color-train-selected: oklch(50% 0.18 255);
 
   /* UI surfaces */
   --color-surface: oklch(100% 0 0); /* cards, buttons */
@@ -55,6 +56,7 @@
     /* Map trains */
     --color-train: oklch(97% 0.005 255);
     --color-train-stale: oklch(55% 0.025 255);
+    --color-train-selected: oklch(70% 0.17 255);
 
     /* UI surfaces */
     --color-surface: oklch(26% 0.02 255);
@@ -66,7 +68,7 @@
     --color-muted: oklch(70% 0.02 255);
 
     /* UI accent and status */
-    --color-accent: oklch(70% 0.17 255);
+    --color-accent: oklch(60% 0.17 255);
     --color-success: oklch(75% 0.15 156);
     --color-warning: oklch(80% 0.13 44);
   }

@@ -6,7 +6,7 @@ import type { TrainStore } from "../trains/store"
 import { useColorScheme } from "../theme"
 import { MapControls } from "./MapControls"
 import { applyColors, createStyle } from "./style"
-import { addTrainLayer, applyTrainColors } from "./trainLayer"
+import { addTrainLayer, applyTrainColors, type TrainLayer } from "./trainLayer"
 
 // MapLibre looks for its worker next to its own file, which breaks when Vite bundles it.
 setWorkerUrl(workerUrl)
@@ -51,9 +51,16 @@ function applyTheme(map: MapLibreMap) {
   applyTrainColors(map)
 }
 
-export function MapView({ store }: { store: TrainStore }) {
+type MapViewProps = {
+  store: TrainStore
+  selectedId: string | null
+  onSelect: (id: string | null) => void
+}
+
+export function MapView({ store, selectedId, onSelect }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
+  const trainLayerRef = useRef<TrainLayer | null>(null)
   const scheme = useColorScheme()
 
   useEffect(() => {
@@ -74,17 +81,21 @@ export function MapView({ store }: { store: TrainStore }) {
     map.on("moveend", () => saveView(map))
     mapRef.current = map
 
-    let stopTrains: (() => void) | null = null
     map.on("load", () => {
-      stopTrains = addTrainLayer(map, store)
+      trainLayerRef.current = addTrainLayer(map, store, onSelect)
     })
 
     return () => {
-      stopTrains?.()
+      trainLayerRef.current?.stop()
+      trainLayerRef.current = null
       map.remove()
       mapRef.current = null
     }
-  }, [store])
+  }, [store, onSelect])
+
+  useEffect(() => {
+    trainLayerRef.current?.setSelected(selectedId)
+  }, [selectedId])
 
   useEffect(() => {
     const map = mapRef.current
