@@ -14,6 +14,7 @@ import { useLiveTrain, useServerNow } from "../trains/useLiveTrain"
 import { useTrainDetails, type TrainDetailsState } from "../trains/useTrainDetails"
 import { Panel } from "./Panel"
 import { Skeleton } from "./Skeleton"
+import { StopList } from "./StopList"
 import { StopTime } from "./StopTime"
 
 const STATUS_TICK_MS = 15_000
@@ -173,6 +174,54 @@ function Deviations({ deviations }: { deviations: string[] }) {
   )
 }
 
+function DetailField({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="rounded-xl bg-surface px-4 py-3">
+      <div className="text-sm text-muted">{label}</div>
+      <div>{children}</div>
+    </div>
+  )
+}
+
+function MoreDetails({ detailsState }: { detailsState: TrainDetailsState }) {
+  if (detailsState.status === "loading") {
+    return (
+      <>
+        <DetailField label="Operatör">
+          <Skeleton className="w-32" />
+        </DetailField>
+        <DetailField label="Stopp">
+          <Skeleton className="w-full" />
+        </DetailField>
+        <DetailField label="Övrig information">
+          <Skeleton className="w-full" />
+        </DetailField>
+      </>
+    )
+  }
+
+  const details = detailsState.status === "loaded" ? detailsState.details : null
+  const otherInformation = details?.otherInformation ?? []
+  const missingStopsText =
+    detailsState.status === "error" ? "Kunde inte hämta tidtabellen" : "Ingen tidtabell tillgänglig"
+
+  return (
+    <>
+      <DetailField label="Operatör">{details?.operator ?? <Missing />}</DetailField>
+      <DetailField label="Stopp">
+        {details ? <StopList details={details} /> : <Missing text={missingStopsText} />}
+      </DetailField>
+      <DetailField label="Övrig information">
+        {otherInformation.length > 0 ? (
+          otherInformation.map((information) => <p key={information}>{information}</p>)
+        ) : (
+          <Missing />
+        )}
+      </DetailField>
+    </>
+  )
+}
+
 type TrainPanelProps = {
   store: TrainStore
   trainId: string
@@ -210,6 +259,7 @@ export function TrainPanel({ store, trainId, onClose }: TrainPanelProps) {
       title={getTrainName(details?.product ?? null, train.n)}
       heading={<Heading detailsState={detailsState} />}
       onClose={onClose}
+      more={<MoreDetails detailsState={detailsState} />}
     >
       <StatusRow detailsState={detailsState} status={status} />
       <NextStop detailsState={detailsState} />

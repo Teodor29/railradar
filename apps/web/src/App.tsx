@@ -32,7 +32,8 @@ export function App() {
     <main className="relative h-dvh w-full overflow-hidden">
       <MapView store={trainStore} selectedId={selectedId} onSelect={setSelectedId} />
       {selectedId ? (
-        <TrainPanel store={trainStore} trainId={selectedId} onClose={deselect} />
+        // Keyed so that each train opens in the default state.
+        <TrainPanel key={selectedId} store={trainStore} trainId={selectedId} onClose={deselect} />
       ) : null}
     </main>
   )

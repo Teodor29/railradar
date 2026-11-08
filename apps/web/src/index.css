@@ -89,4 +89,5 @@ body {
   color: var(--color-fg);
   font-family: system-ui, sans-serif;
   overscroll-behavior: none;
+  scrollbar-color: var(--color-line) transparent;
 }

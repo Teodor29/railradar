@@ -30,7 +30,9 @@ Live på `railradar.se`.
 
 ### Infopanel
 
-Panelen har två lägen: kompakt (öppnas direkt) och expanderad. Panelen har en fast form: rubrik, statusrad och nästa station visas alltid, och ett värde som saknas visas som "–" eller en kort text (t.ex. "Okänd sträcka", "Ingen tidtabell tillgänglig", "Inga fler stopp") i stället för att fältet döljs. Medan detaljerna hämtas visas platshållare på samma platser. Så hoppar inte panelen när datan kommer eller när man byter tåg. Bara avvikelser visas villkorat, sist i panelen.
+Panelen har två lägen: kompakt och expanderad. På mobil öppnas den kompakt och kan expanderas, på desktop är den alltid expanderad. Panelen har en fast form: rubrik, statusrad och nästa station visas alltid, och ett värde som saknas visas som "–" eller en kort text (t.ex. "Okänd sträcka", "Ingen tidtabell tillgänglig", "Inga fler stopp") i stället för att fältet döljs. Medan detaljerna hämtas visas platshållare på samma platser. Så hoppar inte panelen när datan kommer eller när man byter tåg. Bara avvikelser visas villkorat, sist i panelen.
+
+På mobil byter man läge genom att dra i panelens rubrik: uppåt expanderar, nedåt går från expanderad till kompakt och från kompakt stänger. Innehållet scrollar som vanligt och flyttar inte panelen. Knapparna för att expandera och stänga finns kvar.
 
 **Kompakt:**
 
