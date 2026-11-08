@@ -156,6 +156,39 @@ describe("TrainStore", () => {
     expect(sources).toHaveLength(2)
   })
 
+  it("is connected once a snapshot arrives and notifies on changes", () => {
+    const onChange = vi.fn()
+    store.subscribeConnection(onChange)
+    expect(store.isConnected).toBe(false)
+
+    current().send("snapshot", [])
+    expect(store.isConnected).toBe(true)
+    expect(onChange).toHaveBeenCalledTimes(1)
+
+    current().send("snapshot", [])
+    expect(onChange).toHaveBeenCalledTimes(1)
+  })
+
+  it("is disconnected when the stream fails, until the next snapshot", () => {
+    current().send("snapshot", [])
+
+    current().fail()
+    expect(store.isConnected).toBe(false)
+
+    vi.advanceTimersByTime(1_000)
+    expect(store.isConnected).toBe(false)
+
+    current().send("snapshot", [])
+    expect(store.isConnected).toBe(true)
+  })
+
+  it("is disconnected when the stream goes silent", () => {
+    current().send("snapshot", [])
+
+    vi.advanceTimersByTime(50_000)
+    expect(store.isConnected).toBe(false)
+  })
+
   it("stays connected while heartbeats arrive", () => {
     for (let i = 0; i < 6; i++) {
       vi.advanceTimersByTime(15_000)

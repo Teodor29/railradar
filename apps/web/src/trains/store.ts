@@ -40,6 +40,8 @@ export type CreateSource = (url: string) => StreamSource
 export class TrainStore {
   private trains = new Map<string, StreamTrain>()
   private listeners = new Set<Listener>()
+  private connectionListeners = new Set<() => void>()
+  private connected = false
   private source: StreamSource | null = null
   private lastEventAt = 0
   private backoffMs = MIN_BACKOFF_MS
@@ -56,6 +58,10 @@ export class TrainStore {
 
   get size(): number {
     return this.trains.size
+  }
+
+  get isConnected(): boolean {
+    return this.connected
   }
 
   get(id: string): StreamTrain | undefined {
@@ -76,12 +82,18 @@ export class TrainStore {
     return () => this.listeners.delete(listener)
   }
 
+  subscribeConnection(listener: () => void): () => void {
+    this.connectionListeners.add(listener)
+    return () => this.connectionListeners.delete(listener)
+  }
+
   start(): void {
     this.connect()
     this.watchdogTimer = setInterval(() => this.checkConnection(), WATCHDOG_INTERVAL_MS)
   }
 
   stop(): void {
+    this.setConnected(false)
     this.source?.close()
     this.source = null
     if (this.reconnectTimer) {
@@ -102,6 +114,7 @@ export class TrainStore {
     source.addEventListener("snapshot", (event) => {
       this.handle(event, snapshotEventSchema, (trains) => this.replaceAll(trains))
       this.backoffMs = MIN_BACKOFF_MS
+      this.setConnected(true)
     })
     source.addEventListener("update", (event) => {
       this.handle(event, updateEventSchema, (trains) => this.update(trains))
@@ -115,7 +128,20 @@ export class TrainStore {
       })
     })
     // EventSource retries by itself while CONNECTING, but gives up for good on e.g. a 502.
-    source.addEventListener("error", () => this.checkConnection())
+    source.addEventListener("error", () => {
+      this.setConnected(false)
+      this.checkConnection()
+    })
+  }
+
+  private setConnected(connected: boolean): void {
+    if (connected === this.connected) {
+      return
+    }
+    this.connected = connected
+    for (const listener of this.connectionListeners) {
+      listener()
+    }
   }
 
   private handle<T>(
@@ -154,6 +180,7 @@ export class TrainStore {
   }
 
   private reconnect(): void {
+    this.setConnected(false)
     this.source?.close()
     this.reconnectTimer = setTimeout(() => {
       this.reconnectTimer = null

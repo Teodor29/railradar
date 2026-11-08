@@ -6,6 +6,7 @@ import type { TrainStop } from "@railradar/shared"
 import type { TrainStore } from "../trains/store"
 import { useColorScheme } from "../theme"
 import { Attribution } from "./Attribution"
+import { ConnectionBanner } from "./ConnectionBanner"
 import { MapControls } from "./MapControls"
 import { addStopLayer, applyStopColors, setStopLine, setStops } from "./stopLayer"
 import { applyColors, createStyle } from "./style"
@@ -147,6 +148,7 @@ export function MapView({ store, selectedId, stops, onSelect }: MapViewProps) {
       <div ref={containerRef} className="h-full w-full" />
       <div className="pointer-events-none absolute top-[env(safe-area-inset-top)] right-[env(safe-area-inset-right)] bottom-[env(safe-area-inset-bottom)] left-[env(safe-area-inset-left)]">
         <MapControls mapRef={mapRef} />
+        <ConnectionBanner store={store} />
         <Attribution />
       </div>
     </div>
