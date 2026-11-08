@@ -4,6 +4,7 @@ import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url"
 import "maplibre-gl/dist/maplibre-gl.css"
 import type { TrainStore } from "../trains/store"
 import { useColorScheme } from "../theme"
+import { Attribution } from "./Attribution"
 import { MapControls } from "./MapControls"
 import { applyColors, createStyle } from "./style"
 import { addTrainLayer, applyTrainColors, type TrainLayer } from "./trainLayer"
@@ -95,7 +96,12 @@ export function MapView({ store, selectedId, onSelect }: MapViewProps) {
 
   useEffect(() => {
     trainLayerRef.current?.setSelected(selectedId)
-  }, [selectedId])
+
+    const train = selectedId ? store.get(selectedId) : undefined
+    if (train) {
+      mapRef.current?.easeTo({ center: [train.lo, train.la] })
+    }
+  }, [selectedId, store])
 
   useEffect(() => {
     const map = mapRef.current
@@ -114,7 +120,10 @@ export function MapView({ store, selectedId, onSelect }: MapViewProps) {
   return (
     <div className="absolute inset-0">
       <div ref={containerRef} className="h-full w-full" />
-      <MapControls mapRef={mapRef} />
+      <div className="pointer-events-none absolute top-[env(safe-area-inset-top)] right-[env(safe-area-inset-right)] bottom-[env(safe-area-inset-bottom)] left-[env(safe-area-inset-left)]">
+        <MapControls mapRef={mapRef} />
+        <Attribution />
+      </div>
     </div>
   )
 }

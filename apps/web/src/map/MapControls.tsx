@@ -41,7 +41,7 @@ export function MapControls({ mapRef }: { mapRef: RefObject<MapLibreMap | null> 
   }
 
   return (
-    <div className="absolute top-4 right-4 flex flex-col gap-3 md:top-auto md:bottom-4">
+    <div className="pointer-events-auto absolute top-4 right-4 flex flex-col gap-3 md:top-auto md:bottom-4">
       <MapControlGroup>
         <MapButton
           label="Visa min position"

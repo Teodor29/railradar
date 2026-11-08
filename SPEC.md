@@ -30,20 +30,18 @@ Live på `railradar.se`.
 
 ### Infopanel
 
-Panelen har två lägen: kompakt (öppnas direkt) och expanderad. Visa bara fält som faktiskt finns för tåget. Tåg utan annonserad tidtabell visar bara tågnummer, hastighet och "Ingen tidtabell tillgänglig".
+Panelen har två lägen: kompakt (öppnas direkt) och expanderad. Panelen har en fast form: rubrik, statusrad och nästa station visas alltid, och ett värde som saknas visas som "–" eller en kort text (t.ex. "Okänd sträcka", "Ingen tidtabell tillgänglig", "Inga fler stopp") i stället för att fältet döljs. Medan detaljerna hämtas visas platshållare på samma platser. Så hoppar inte panelen när datan kommer eller när man byter tåg. Bara avvikelser visas villkorat, sist i panelen.
 
 **Kompakt:**
 
-- Tågnummer, produkt och operatör (t.ex. "Öresundståg, Skånetrafiken")
-- Från → till
-- Status: inställt, delvis inställt eller senast sett (se nedan)
-- Försening i minuter
-- Hastighet (saknas för många tåg, visas bara när den finns)
+- Från → till i fokus, med produkt och tågnummer ovanför (t.ex. "Tåg 1047 · Öresundståg")
+- Statusrad: vad tåget gör nu till vänster (se Status nedan), försening i minuter till höger ("–" om den saknas eller tåget är inställt)
 - Nästa station med tid och spår
 - Avvikelse som kort notis, t.ex. "Buss ersätter" eller "Spårändrat"
 
 **Expanderad:**
 
+- Operatör (t.ex. "Skånetrafiken")
 - Stopplista: alla annonserade stationer med planerad, beräknad och faktisk tid, spår, och markering av passerade och inställda stationer
 - Övrig information från Trafikverket
 
@@ -51,8 +49,14 @@ Panelen har två lägen: kompakt (öppnas direkt) och expanderad. Visa bara fäl
 
 I MVP visas bara det som går att läsa direkt ur Trafikverkets data. Ingen egen statuslogik på servern.
 
-- **Inställt:** `Canceled` från `TrainAnnouncement` gäller per stopp. Tåget är inställt när alla stopp är inställda och delvis inställt när bara vissa är det. Det är bara känt när tåget har öppnats.
-- **Senast sett:** senaste position äldre än 2 min. Tåget ligger kvar på kartan men nedtonat. Frontend räknar ut det från `measuredAt`.
+Statusraden visar det första som gäller:
+
+- **Inställt:** `Canceled` från `TrainAnnouncement` gäller per stopp. Tåget är inställt när alla stopp är inställda. Är bara vissa inställda visas de som notis (se ovan), inte som status. Det är bara känt när tåget har öppnats.
+- **Senast sett · 3 min sedan:** senaste position äldre än 2 min. Tåget ligger kvar på kartan men nedtonat. Frontend räknar ut det från `measuredAt`.
+- **I rörelse · 120 km/h:** hastighet över 0.
+- **Vid Uppsala C:** tåget har ankommit till nästa stopp (eller står på första stationen) men inte avgått, och hastigheten är 0 eller saknas.
+- **Står still:** hastighet 0 någon annanstans. Utan tid tills positionshistoriken finns.
+- **I trafik:** hastighet saknas.
 
 Ett tåg tas bort från kartan (`remove`) när Trafikverket markerar positionen som raderad (`Deleted`) eller inaktiv (`Status.Active = false`), eller när senaste position är äldre än 30 min.
 
@@ -127,7 +131,7 @@ Monorepo med `api`, `web` och `shared`, dev-Postgres, migrationer, `/api/health`
 
 Egen logik som bygger vidare på Trafikverkets data:
 
-- Status "Står still": hastighet 0 i mer än 60 s, eller förflyttning under 50 m när hastighet saknas
+- Skärpt "Står still" med tid ("Står still · 6 min"): hastighet 0 i mer än 60 s, eller förflyttning under 50 m när hastighet saknas
 - Ring på kartan för tåg som står still ute på linjen (> 500 m från närmaste station)
 - Positionshistorik i Postgres (en punkt per tåg var 30:e sekund, 24 h) med hastighetsgraf, toppfart och snittfart i infopanelen
 

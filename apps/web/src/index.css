@@ -3,8 +3,8 @@
 @theme static {
   /* Map areas */
   --color-water: oklch(88% 0.04 255);
-  --color-land: oklch(97% 0.005 255); /* also page background */
-  --color-building: oklch(95% 0.005 255); /* built-up areas and buildings */
+  --color-land: oklch(95% 0.005 255);
+  --color-building: oklch(93% 0.005 255); /* built-up areas and buildings */
 
   /* Map lines */
   --color-road: oklch(100% 0 0); /* minor roads */
@@ -22,8 +22,9 @@
   --color-train-selected: oklch(50% 0.18 255);
 
   /* UI surfaces */
+  --color-page: oklch(97% 0.005 255); /* page and panel background */
   --color-surface: oklch(100% 0 0); /* cards, buttons */
-  --color-surface-hover: oklch(97% 0.005 255); /* hovered buttons */
+  --color-surface-hover: oklch(98.5% 0.003 255); /* hovered buttons */
   --color-line: oklch(70% 0.02 255); /* dividers, borders */
 
   /* UI text */
@@ -34,14 +35,15 @@
   --color-accent: oklch(50% 0.18 255); /* selected, links, primary buttons */
   --color-success: oklch(50% 0.14 147); /* on time */
   --color-warning: oklch(50% 0.155 43); /* delayed */
+  --color-danger: oklch(50% 0.19 25); /* canceled */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* Map areas */
     --color-water: oklch(12% 0.01 255);
-    --color-land: oklch(20% 0.015 255);
-    --color-building: oklch(22% 0.015 255);
+    --color-land: oklch(18% 0.015 255);
+    --color-building: oklch(20% 0.015 255);
 
     /* Map lines */
     --color-road: oklch(27% 0.02 255);
@@ -59,8 +61,9 @@
     --color-train-selected: oklch(70% 0.17 255);
 
     /* UI surfaces */
+    --color-page: oklch(22% 0.02 255);
     --color-surface: oklch(26% 0.02 255);
-    --color-surface-hover: oklch(20% 0.015 255);
+    --color-surface-hover: oklch(24% 0.02 255);
     --color-line: oklch(45% 0.025 255);
 
     /* UI text */
@@ -71,6 +74,7 @@
     --color-accent: oklch(60% 0.17 255);
     --color-success: oklch(75% 0.15 156);
     --color-warning: oklch(80% 0.13 44);
+    --color-danger: oklch(72% 0.16 22);
   }
 }
 
@@ -81,7 +85,7 @@ body,
 }
 
 body {
-  background: var(--color-land);
+  background: var(--color-page);
   color: var(--color-fg);
   font-family: system-ui, sans-serif;
   overscroll-behavior: none;

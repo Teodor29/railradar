@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react"
-import { Attribution } from "./map/Attribution"
+import { useCallback, useEffect, useState } from "react"
+import { apiUrl } from "./api"
 import { MapView } from "./map/MapView"
+import { TrainPanel } from "./panel/TrainPanel"
 import { TrainStore } from "./trains/store"
 
-// Empty in development, where Vite proxies /api to the local API.
-const apiUrl: string = import.meta.env.VITE_API_URL ?? ""
 const trainStore = new TrainStore(`${apiUrl}/api/stream`)
 
 export function App() {
@@ -27,10 +26,14 @@ export function App() {
     })
   }, [])
 
+  const deselect = useCallback(() => setSelectedId(null), [])
+
   return (
     <main className="relative h-dvh w-full overflow-hidden">
       <MapView store={trainStore} selectedId={selectedId} onSelect={setSelectedId} />
-      <Attribution />
+      {selectedId ? (
+        <TrainPanel store={trainStore} trainId={selectedId} onClose={deselect} />
+      ) : null}
     </main>
   )
 }
