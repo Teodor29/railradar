@@ -3,11 +3,14 @@ import { apiUrl } from "./api"
 import { MapView } from "./map/MapView"
 import { TrainPanel } from "./panel/TrainPanel"
 import { TrainStore } from "./trains/store"
+import { useTrainDetails } from "./trains/useTrainDetails"
 
 const trainStore = new TrainStore(`${apiUrl}/api/stream`)
 
 export function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
+  const detailsState = useTrainDetails(selectedId)
+  const stops = detailsState.status === "loaded" ? detailsState.details.stops : null
 
   useEffect(() => {
     trainStore.start()
@@ -30,10 +33,16 @@ export function App() {
 
   return (
     <main className="relative h-dvh w-full overflow-hidden">
-      <MapView store={trainStore} selectedId={selectedId} onSelect={setSelectedId} />
+      <MapView store={trainStore} selectedId={selectedId} stops={stops} onSelect={setSelectedId} />
       {selectedId ? (
         // Keyed so that each train opens in the default state.
-        <TrainPanel key={selectedId} store={trainStore} trainId={selectedId} onClose={deselect} />
+        <TrainPanel
+          key={selectedId}
+          store={trainStore}
+          trainId={selectedId}
+          detailsState={detailsState}
+          onClose={deselect}
+        />
       ) : null}
     </main>
   )

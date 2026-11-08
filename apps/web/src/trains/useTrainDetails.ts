@@ -23,13 +23,19 @@ async function fetchTrainDetails(id: string, signal: AbortSignal): Promise<Train
   return trainDetailsSchema.parse(await response.json())
 }
 
-export function useTrainDetails(id: string): TrainDetailsState {
+// Stays "loading" while no train is selected.
+export function useTrainDetails(id: string | null): TrainDetailsState {
   const [result, setResult] = useState<{ id: string; state: TrainDetailsState } | null>(null)
 
   useEffect(() => {
+    if (id === null) {
+      return
+    }
+
     const controller = new AbortController()
 
-    async function load() {
+    // An arrow function, since a hoisted declaration would lose the null check above.
+    const load = async () => {
       try {
         const details = await fetchTrainDetails(id, controller.signal)
         if (details) {
@@ -57,6 +63,8 @@ export function useTrainDetails(id: string): TrainDetailsState {
     return () => {
       controller.abort()
       clearInterval(timer)
+      // So that reopening a train starts from "loading" instead of old data.
+      setResult(null)
     }
   }, [id])
 

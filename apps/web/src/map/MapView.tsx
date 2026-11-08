@@ -2,10 +2,12 @@ import { useEffect, useRef } from "react"
 import { MapLibreMap, setWorkerUrl } from "maplibre-gl"
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url"
 import "maplibre-gl/dist/maplibre-gl.css"
+import type { TrainStop } from "@railradar/shared"
 import type { TrainStore } from "../trains/store"
 import { useColorScheme } from "../theme"
 import { Attribution } from "./Attribution"
 import { MapControls } from "./MapControls"
+import { addStopLayer, applyStopColors, setStopLine, setStops } from "./stopLayer"
 import { applyColors, createStyle } from "./style"
 import { addTrainLayer, applyTrainColors, type TrainLayer } from "./trainLayer"
 
@@ -49,16 +51,19 @@ function saveView(map: MapLibreMap) {
 
 function applyTheme(map: MapLibreMap) {
   applyColors(map)
+  applyStopColors(map)
   applyTrainColors(map)
 }
 
 type MapViewProps = {
   store: TrainStore
   selectedId: string | null
+  // Stops of the selected train, null when there are none to show.
+  stops: TrainStop[] | null
   onSelect: (id: string | null) => void
 }
 
-export function MapView({ store, selectedId, onSelect }: MapViewProps) {
+export function MapView({ store, selectedId, stops, onSelect }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
   const trainLayerRef = useRef<TrainLayer | null>(null)
@@ -83,6 +88,7 @@ export function MapView({ store, selectedId, onSelect }: MapViewProps) {
     mapRef.current = map
 
     map.on("load", () => {
+      addStopLayer(map)
       trainLayerRef.current = addTrainLayer(map, store, onSelect)
     })
 
@@ -102,6 +108,25 @@ export function MapView({ store, selectedId, onSelect }: MapViewProps) {
       mapRef.current?.easeTo({ center: [train.lo, train.la] })
     }
   }, [selectedId, store])
+
+  useEffect(() => {
+    if (mapRef.current) {
+      setStops(mapRef.current, stops ?? [])
+    }
+  }, [stops])
+
+  // The line starts at the train, so it's redrawn as the train moves.
+  useEffect(() => {
+    const updateLine = () => {
+      const train = selectedId ? store.get(selectedId) : undefined
+      if (mapRef.current) {
+        setStopLine(mapRef.current, stops ?? [], train ? [train.lo, train.la] : null)
+      }
+    }
+
+    updateLine()
+    return store.subscribe(updateLine)
+  }, [stops, selectedId, store])
 
   useEffect(() => {
     const map = mapRef.current

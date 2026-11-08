@@ -20,6 +20,8 @@
   --color-train: oklch(20% 0.03 255);
   --color-train-stale: oklch(70% 0.02 255); /* not seen recently */
   --color-train-selected: oklch(50% 0.18 255);
+  --color-stop: oklch(50% 0.18 255); /* upcoming stops of the selected train */
+  --color-stop-passed: oklch(70% 0.02 255);
 
   /* UI surfaces */
   --color-page: oklch(97% 0.005 255); /* page and panel background */
@@ -59,6 +61,8 @@
     --color-train: oklch(97% 0.005 255);
     --color-train-stale: oklch(55% 0.025 255);
     --color-train-selected: oklch(70% 0.17 255);
+    --color-stop: oklch(70% 0.17 255);
+    --color-stop-passed: oklch(55% 0.025 255);
 
     /* UI surfaces */
     --color-page: oklch(22% 0.02 255);

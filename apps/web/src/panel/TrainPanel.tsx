@@ -11,7 +11,7 @@ import {
 } from "../trains/format"
 import type { TrainStore } from "../trains/store"
 import { useLiveTrain, useServerNow } from "../trains/useLiveTrain"
-import { useTrainDetails, type TrainDetailsState } from "../trains/useTrainDetails"
+import type { TrainDetailsState } from "../trains/useTrainDetails"
 import { Panel } from "./Panel"
 import { Skeleton } from "./Skeleton"
 import { StopList } from "./StopList"
@@ -225,13 +225,13 @@ function MoreDetails({ detailsState }: { detailsState: TrainDetailsState }) {
 type TrainPanelProps = {
   store: TrainStore
   trainId: string
+  detailsState: TrainDetailsState
   onClose: () => void
 }
 
-export function TrainPanel({ store, trainId, onClose }: TrainPanelProps) {
+export function TrainPanel({ store, trainId, detailsState, onClose }: TrainPanelProps) {
   const train = useLiveTrain(store, trainId)
   const serverNow = useServerNow(store, STATUS_TICK_MS)
-  const detailsState = useTrainDetails(trainId)
 
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {

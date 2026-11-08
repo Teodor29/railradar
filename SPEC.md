@@ -25,7 +25,8 @@ Live på `railradar.se`.
 ### Valt tåg
 
 - Klick på ett tåg markerar det och öppnar infopanelen.
-- Kartan visar tågets stationer som prickar: passerade nedtonade, kommande tydliga.
+- Kartan visar tågets stationer som prickar med namn: passerade och inställda nedtonade, kommande tydliga. Namn som krockar döljs tills man zoomar in.
+- En prickad linje går från tåget genom de kommande stationerna, och en svagare grå linje genom de passerade. Linjen är rak mellan stationerna och visar ordningen, inte var spåret går.
 - Klick på tom karta eller stängd panel avmarkerar.
 
 ### Infopanel
@@ -147,6 +148,7 @@ Egen logik som bygger vidare på Trafikverkets data:
 - Hotspots: flera tåg som står still på samma sträcka markeras som trolig störning
 - Live-räknare, t.ex. "312 tåg i rörelse · 14 står still · snabbast just nu: X, 205 km/h"
 - Bild per tågtyp (via produktinformationen)
+- Ruttlinje för valt tåg som följer rälsen. Kräver en egen spårgraf från OSM, eftersom Trafikverket bara rapporterar passager mellan stationerna i efterhand och linjen annars blir rak framför tåget
 - Mjuk rörelse längs rälsen: positioner matchas mot järnvägsnätet så att tågen glider längs spåret i stället för att hoppa, eventuellt med dead reckoning så att de ligger närmare verkligheten (idag ca 10–20 s efter)
 - Indikator för tappad anslutning
 - Störningsinformation från `TrainMessage` (t.ex. signalfel på en sträcka)
