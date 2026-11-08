@@ -85,9 +85,15 @@ body,
 }
 
 body {
-  background: var(--color-page);
+  background: var(--color-land);
   color: var(--color-fg);
   font-family: system-ui, sans-serif;
   overscroll-behavior: none;
   scrollbar-color: var(--color-line) transparent;
+}
+
+/* No grey flash or double-tap delay when tapping buttons on touch screens. */
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }

@@ -1,10 +1,4 @@
-import {
-  useRef,
-  useState,
-  type ButtonHTMLAttributes,
-  type PointerEvent,
-  type ReactNode,
-} from "react"
+import { useEffect, useRef, useState, type ButtonHTMLAttributes, type ReactNode } from "react"
 import { ChevronDown, ChevronUp, X } from "lucide-react"
 
 // Tailwind's md breakpoint, where the sheet becomes a side panel.
@@ -16,6 +10,19 @@ const SETTLE_MS = 200
 type Gesture = { startY: number; startHeight: number; maxHeight: number }
 type SheetDrag = { height: number; settling: boolean }
 
+function createGesture(section: HTMLElement, startY: number): Gesture {
+  return {
+    startY,
+    startHeight: section.offsetHeight,
+    maxHeight: parseFloat(getComputedStyle(section).maxHeight),
+  }
+}
+
+function getDragHeight(gesture: Gesture, clientY: number): number {
+  const height = gesture.startHeight + gesture.startY - clientY
+  return Math.max(0, Math.min(height, gesture.maxHeight))
+}
+
 // The sheet height that ends just below the given part of its content.
 function getHeightBelow(content: HTMLElement, scroller: HTMLElement): number {
   const paddingBottom = parseFloat(getComputedStyle(scroller).paddingBottom)
@@ -26,7 +33,7 @@ function HeaderButton(props: ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
       type="button"
-      className="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full bg-surface text-muted transition-colors hover:bg-surface-hover"
+      className="relative flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full bg-surface text-muted transition-colors after:absolute after:-inset-1 hover:bg-surface-hover"
       {...props}
     />
   )
@@ -53,33 +60,53 @@ export function Panel({ title, heading, onClose, children, more }: PanelProps) {
   const scrollerRef = useRef<HTMLDivElement>(null)
   const compactRef = useRef<HTMLDivElement>(null)
   const fullRef = useRef<HTMLDivElement>(null)
+  const touchY = useRef(0)
 
-  function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+  // A native listener, since React's touchmove is passive and can't stop the content scrolling.
+  // Touch events, because pointer events end as soon as the browser starts scrolling.
+  useEffect(() => {
     const section = sectionRef.current
-    if (!section || window.matchMedia(DESKTOP_QUERY).matches) {
-      return
-    }
-    if (event.target instanceof Element && event.target.closest("button")) {
+    const scroller = scrollerRef.current
+    if (!section || !scroller) {
       return
     }
 
-    window.clearTimeout(settleTimer.current)
-    event.currentTarget.setPointerCapture(event.pointerId)
-    gesture.current = {
-      startY: event.clientY,
-      startHeight: section.offsetHeight,
-      maxHeight: parseFloat(getComputedStyle(section).maxHeight),
-    }
-  }
+    const handleTouchMove = (event: TouchEvent) => {
+      const touch = event.touches[0]
+      if (!touch) {
+        return
+      }
 
-  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
-    if (!gesture.current) {
-      return
+      const previousY = touchY.current
+      touchY.current = touch.clientY
+
+      if (!gesture.current) {
+        const target = event.target
+        if (!(target instanceof Element) || target.closest("button")) {
+          return
+        }
+        // Expanded content scrolls first and hands over to the sheet at the top.
+        const pullingFromTop = scroller.scrollTop <= 0 && touch.clientY > previousY
+        if (expanded && scroller.contains(target) && !pullingFromTop) {
+          return
+        }
+        if (window.matchMedia(DESKTOP_QUERY).matches) {
+          return
+        }
+        window.clearTimeout(settleTimer.current)
+        gesture.current = createGesture(section, previousY)
+      }
+
+      // Not cancelable if the browser already scrolls, but then the list is at its top anyway.
+      if (event.cancelable) {
+        event.preventDefault()
+      }
+      setDrag({ height: getDragHeight(gesture.current, touch.clientY), settling: false })
     }
-    const { startY, startHeight, maxHeight } = gesture.current
-    const height = startHeight + startY - event.clientY
-    setDrag({ height: Math.max(0, Math.min(height, maxHeight)), settling: false })
-  }
+
+    section.addEventListener("touchmove", handleTouchMove, { passive: false })
+    return () => section.removeEventListener("touchmove", handleTouchMove)
+  }, [expanded])
 
   function settle(nextExpanded: boolean) {
     const maxHeight = gesture.current?.maxHeight
@@ -87,7 +114,7 @@ export function Panel({ title, heading, onClose, children, more }: PanelProps) {
 
     const scroller = scrollerRef.current
     const target = nextExpanded ? fullRef.current : compactRef.current
-    // Without a drag this was a tap on the header, which does nothing.
+    // Without a drag there is nothing to settle.
     if (!drag || maxHeight === undefined || !scroller || !target) {
       return
     }
@@ -97,24 +124,21 @@ export function Panel({ title, heading, onClose, children, more }: PanelProps) {
     settleTimer.current = window.setTimeout(() => setDrag(null), SETTLE_MS)
   }
 
-  function handlePointerUp(event: PointerEvent<HTMLDivElement>) {
+  function finishGesture() {
     if (!gesture.current) {
       return
     }
 
-    const movedUp = gesture.current.startY - event.clientY
-    if (!expanded && movedUp < -SWIPE_DISTANCE_PX) {
-      gesture.current = null
-      onClose()
-      return
-    }
-
+    const movedUp = gesture.current.startY - touchY.current
     if (movedUp > SWIPE_DISTANCE_PX) {
       settle(true)
-    } else if (movedUp < -SWIPE_DISTANCE_PX) {
+    } else if (movedUp >= -SWIPE_DISTANCE_PX) {
+      settle(expanded)
+    } else if (expanded) {
       settle(false)
     } else {
-      settle(expanded)
+      gesture.current = null
+      onClose()
     }
   }
 
@@ -123,15 +147,14 @@ export function Panel({ title, heading, onClose, children, more }: PanelProps) {
       ref={sectionRef}
       aria-label={title}
       style={drag ? { height: drag.height } : undefined}
-      className={`absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col rounded-t-2xl bg-page shadow-lg md:top-4 md:bottom-auto md:left-4 md:max-h-[calc(100%-2rem)] md:w-96 md:rounded-2xl ${drag?.settling ? "transition-[height] duration-200 ease-out" : ""}`}
+      className={`absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col rounded-t-2xl bg-page shadow-lg md:top-4 md:bottom-auto md:left-[max(1rem,env(safe-area-inset-left))] md:max-h-[calc(100%-2rem)] md:w-96 md:rounded-2xl ${drag?.settling ? "transition-[height] duration-200 ease-out" : ""}`}
+      onTouchStart={(event) => {
+        touchY.current = event.touches.item(0).clientY
+      }}
+      onTouchEnd={finishGesture}
+      onTouchCancel={() => settle(expanded)}
     >
-      <div
-        className="shrink-0 touch-none select-none md:touch-auto md:select-auto"
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerCancel={() => settle(expanded)}
-      >
+      <div className="shrink-0 touch-none select-none md:touch-auto md:select-auto">
         <div className="mx-auto mt-2 h-1 w-10 rounded-full bg-line/60 md:hidden" />
 
         <header className="flex items-start gap-2 px-4 pt-3 pb-4">
@@ -156,7 +179,7 @@ export function Panel({ title, heading, onClose, children, more }: PanelProps) {
 
       <div
         ref={scrollerRef}
-        className="overflow-y-auto px-4 pb-[max(1rem,env(safe-area-inset-bottom))] [scrollbar-width:thin]"
+        className="overflow-y-auto overscroll-y-none px-4 pb-[max(1rem,env(safe-area-inset-bottom))] [scrollbar-width:thin]"
       >
         <div ref={fullRef} className="flex flex-col gap-3">
           <div ref={compactRef} className="flex flex-col gap-3">
