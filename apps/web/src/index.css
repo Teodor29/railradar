@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Set in main.tsx. */
+@custom-variant standalone (&:where(.standalone, .standalone *));
+
 @theme static {
   /* Map areas */
   --color-water: oklch(88% 0.04 255);
@@ -86,6 +89,11 @@ html,
 body,
 #root {
   height: 100%;
+
+  /* Same as main, so the page can't scroll. */
+  @variant standalone {
+    height: 100lvh;
+  }
 }
 
 body {

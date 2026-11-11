@@ -68,6 +68,7 @@ export function MapView({ store, selectedId, stops, onSelect }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
   const trainLayerRef = useRef<TrainLayer | null>(null)
+  const loadedRef = useRef(false)
   const scheme = useColorScheme()
 
   useEffect(() => {
@@ -91,11 +92,14 @@ export function MapView({ store, selectedId, stops, onSelect }: MapViewProps) {
     map.on("load", () => {
       addStopLayer(map)
       trainLayerRef.current = addTrainLayer(map, store, onSelect)
+      loadedRef.current = true
+      applyTheme(map)
     })
 
     return () => {
       trainLayerRef.current?.stop()
       trainLayerRef.current = null
+      loadedRef.current = false
       map.remove()
       mapRef.current = null
     }
@@ -129,15 +133,11 @@ export function MapView({ store, selectedId, stops, onSelect }: MapViewProps) {
     return store.subscribe(updateLine)
   }, [stops, selectedId, store])
 
+  // Not map.isStyleLoaded(), which is also false while tiles or train data load.
   useEffect(() => {
     const map = mapRef.current
-    if (!map) {
-      return
-    }
-    if (map.isStyleLoaded()) {
+    if (map && loadedRef.current) {
       applyTheme(map)
-    } else {
-      map.once("load", () => applyTheme(map))
     }
   }, [scheme])
 

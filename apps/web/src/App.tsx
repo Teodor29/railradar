@@ -31,8 +31,9 @@ export function App() {
 
   const deselect = useCallback(() => setSelectedId(null), [])
 
+  // On the iOS home screen, 100dvh is short by the status bar's height.
   return (
-    <main className="relative h-dvh w-full overflow-hidden">
+    <main className="relative h-dvh w-full overflow-hidden standalone:h-lvh">
       <MapView store={trainStore} selectedId={selectedId} stops={stops} onSelect={setSelectedId} />
       {selectedId ? (
         // Keyed so that each train opens in the default state.
