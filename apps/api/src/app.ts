@@ -74,8 +74,9 @@ export function createApp(
       next(new HttpError(429, "rate_limited", "Too many requests"))
     },
   })
+  app.use("/api/trains", trainDetailsLimiter)
 
-  app.get("/api/trains/:id", trainDetailsLimiter, async (req, res) => {
+  app.get("/api/trains/:id", async (req, res) => {
     const details = await getTrainDetails(req.params.id)
     if (!details) {
       throw new HttpError(404, "train_not_found", "Train not found")

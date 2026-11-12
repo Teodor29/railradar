@@ -1,3 +1,4 @@
 {$SITE_ADDRESS:api.railradar.se} {
+	encode zstd gzip
 	reverse_proxy api:3000
 }
