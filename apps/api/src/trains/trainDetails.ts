@@ -6,7 +6,7 @@ import { createTtlCache } from "./ttlCache"
 
 const CACHE_TTL_MS = 30_000
 const QUERY_TIMEOUT_MS = 10_000
-const TRAIN_ID_PATTERN = /^(\d{4}-\d{2}-\d{2})-(.+)$/
+const TRAIN_ID_PATTERN = /^(\d{4}-\d{2}-\d{2})-(\d{1,6})$/
 
 export function parseTrainId(id: string): { departureDate: string; trainNumber: string } | null {
   const match = TRAIN_ID_PATTERN.exec(id)

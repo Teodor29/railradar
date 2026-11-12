@@ -1,4 +1,5 @@
 import express from "express"
+import { rateLimit } from "express-rate-limit"
 import type { Health, TrainDetails } from "@railradar/shared"
 import { pingDb } from "./db/pool"
 import { errorHandler, HttpError, notFound } from "./errors"
@@ -23,6 +24,8 @@ export function createApp(
 ) {
   const app = express()
   app.disable("x-powered-by")
+  // Caddy is the only proxy in front of the API, so the client IP is the last hop it adds.
+  app.set("trust proxy", 1)
 
   // Only GET without credentials is used, so there are no preflight requests to answer.
   app.use((req, res, next) => {
@@ -61,7 +64,18 @@ export function createApp(
     broadcaster.addClient(res)
   })
 
-  app.get("/api/trains/:id", async (req, res) => {
+  // Each detail lookup can trigger a Trafikverket query, so limit how often one client can ask.
+  const trainDetailsLimiter = rateLimit({
+    windowMs: 60_000,
+    limit: 60,
+    standardHeaders: "draft-8",
+    legacyHeaders: false,
+    handler: (_req, _res, next) => {
+      next(new HttpError(429, "rate_limited", "Too many requests"))
+    },
+  })
+
+  app.get("/api/trains/:id", trainDetailsLimiter, async (req, res) => {
     const details = await getTrainDetails(req.params.id)
     if (!details) {
       throw new HttpError(404, "train_not_found", "Train not found")

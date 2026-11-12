@@ -61,6 +61,12 @@ describe("parseTrainId", () => {
     expect(parseTrainId("179")).toBeNull()
     expect(parseTrainId("2026-11-06-")).toBeNull()
   })
+
+  it("rejects train numbers that aren't digits", () => {
+    expect(parseTrainId("2026-11-06-179A")).toBeNull()
+    expect(parseTrainId("2026-11-06-1'</FILTER>")).toBeNull()
+    expect(parseTrainId("2026-11-06-1234567")).toBeNull()
+  })
 })
 
 describe("buildTrainDetails", () => {

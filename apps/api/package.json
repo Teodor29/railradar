@@ -17,6 +17,7 @@
   "dependencies": {
     "@railradar/shared": "*",
     "express": "^5.3.0",
+    "express-rate-limit": "^8.7.4",
     "pg": "^8.23.1",
     "tsx": "^4.23.15",
     "zod": "^4.6.7"

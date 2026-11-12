@@ -71,6 +71,21 @@ describe("GET /api/trains/:id", () => {
 
     consoleError.mockRestore()
   })
+
+  it("limits how often one client can ask", async () => {
+    const response = await request(async () => details)
+    const url = response.url
+
+    const statuses = []
+    for (let i = 0; i < 60; i++) {
+      statuses.push((await fetch(url)).status)
+    }
+
+    expect(statuses.slice(0, 59).every((status) => status === 200)).toBe(true)
+    expect(statuses.at(-1)).toBe(429)
+    const limited = await fetch(url)
+    expect(apiErrorSchema.parse(await limited.json()).error.code).toBe("rate_limited")
+  })
 })
 
 describe("CORS", () => {
