@@ -16,30 +16,48 @@ function getNameClass(stop: TrainStop, isNext: boolean): string {
   return isNext ? "font-semibold" : ""
 }
 
-function StopRow({ stop, isNext }: { stop: TrainStop; isNext: boolean }) {
+type StopRowProps = {
+  stop: TrainStop
+  isNext: boolean
+  onSelect: (stop: TrainStop) => void
+}
+
+function StopRow({ stop, isNext, onSelect }: StopRowProps) {
   const call = getUpcomingCall(stop)
+  // Stops without a position can't be shown on the map.
+  const selectable = stop.lat !== null && stop.lon !== null
 
   return (
-    <li
-      className={`flex items-center justify-between gap-3 py-2 ${stop.passed ? "opacity-60" : ""}`}
-    >
-      <div className="flex min-w-0 items-center gap-2.5">
-        <span className={`size-2.5 shrink-0 rounded-full ${getDotClass(stop, isNext)}`} />
-        <div className="min-w-0">
-          <div className={`truncate ${getNameClass(stop, isNext)}`}>{stop.name}</div>
-          <div className="text-sm text-muted">
-            Spår {stop.track ?? "–"}
-            {stop.passed ? <span className="sr-only"> · passerad</span> : null}
+    <li className={stop.passed ? "opacity-60" : ""}>
+      <button
+        type="button"
+        disabled={!selectable}
+        onClick={() => onSelect(stop)}
+        className="-mx-2 flex w-[calc(100%+1rem)] cursor-pointer items-center justify-between gap-3 rounded-lg px-2 py-2 text-left hover:bg-surface-hover disabled:cursor-default disabled:hover:bg-transparent"
+      >
+        <div className="flex min-w-0 items-center gap-2.5">
+          <span className={`size-2.5 shrink-0 rounded-full ${getDotClass(stop, isNext)}`} />
+          <div className="min-w-0">
+            <div className={`truncate ${getNameClass(stop, isNext)}`}>{stop.name}</div>
+            <div className="text-sm text-muted">
+              Spår {stop.track ?? "–"}
+              {stop.passed ? <span className="sr-only"> · passerad</span> : null}
+            </div>
           </div>
         </div>
-      </div>
-      {stop.canceled ? <span className="font-semibold text-danger">Inställt</span> : null}
-      {!stop.canceled && call ? <StopTime call={call} /> : null}
+        {stop.canceled ? <span className="font-semibold text-danger">Inställt</span> : null}
+        {!stop.canceled && call ? <StopTime call={call} /> : null}
+      </button>
     </li>
   )
 }
 
-export function StopList({ details }: { details: TrainDetails }) {
+type StopListProps = {
+  details: TrainDetails
+  onSelectStop: (stop: TrainStop) => void
+}
+
+export function StopList({ details, onSelectStop }: StopListProps) {
   return (
     <ol className="divide-y divide-line/30">
       {details.stops.map((stop, index) => (
@@ -47,6 +65,7 @@ export function StopList({ details }: { details: TrainDetails }) {
           key={`${stop.signature}-${index}`}
           stop={stop}
           isNext={index === details.nextStopIndex}
+          onSelect={onSelectStop}
         />
       ))}
     </ol>

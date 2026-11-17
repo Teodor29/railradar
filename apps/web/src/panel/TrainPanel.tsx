@@ -1,6 +1,6 @@
-import { useEffect, type ReactNode } from "react"
+import { useEffect, useState, type ReactNode } from "react"
 import { TriangleAlert } from "lucide-react"
-import type { TrainDetails } from "@railradar/shared"
+import type { TrainDetails, TrainStop } from "@railradar/shared"
 import {
   formatDelay,
   getCanceledStopsNotice,
@@ -13,6 +13,7 @@ import type { TrainStore } from "../trains/store"
 import { useLiveTrain, useServerNow } from "../trains/useLiveTrain"
 import type { TrainDetailsState } from "../trains/useTrainDetails"
 import { Panel } from "./Panel"
+import { ShareButton } from "./ShareButton"
 import { Skeleton } from "./Skeleton"
 import { StopList } from "./StopList"
 import { StopTime } from "./StopTime"
@@ -183,7 +184,12 @@ function DetailField({ label, children }: { label: string; children: ReactNode }
   )
 }
 
-function MoreDetails({ detailsState }: { detailsState: TrainDetailsState }) {
+type MoreDetailsProps = {
+  detailsState: TrainDetailsState
+  onSelectStop: (stop: TrainStop) => void
+}
+
+function MoreDetails({ detailsState, onSelectStop }: MoreDetailsProps) {
   if (detailsState.status === "loading") {
     return (
       <>
@@ -209,7 +215,11 @@ function MoreDetails({ detailsState }: { detailsState: TrainDetailsState }) {
     <>
       <DetailField label="Operatör">{details?.operator ?? <Missing />}</DetailField>
       <DetailField label="Stopp">
-        {details ? <StopList details={details} /> : <Missing text={missingStopsText} />}
+        {details ? (
+          <StopList details={details} onSelectStop={onSelectStop} />
+        ) : (
+          <Missing text={missingStopsText} />
+        )}
       </DetailField>
       <DetailField label="Övrig information">
         {otherInformation.length > 0 ? (
@@ -227,9 +237,17 @@ type TrainPanelProps = {
   trainId: string
   detailsState: TrainDetailsState
   onClose: () => void
+  onSelectStop: (stop: TrainStop) => void
 }
 
-export function TrainPanel({ store, trainId, detailsState, onClose }: TrainPanelProps) {
+export function TrainPanel({
+  store,
+  trainId,
+  detailsState,
+  onClose,
+  onSelectStop,
+}: TrainPanelProps) {
+  const [expanded, setExpanded] = useState(false)
   const train = useLiveTrain(store, trainId)
   const serverNow = useServerNow(store, STATUS_TICK_MS)
 
@@ -252,14 +270,24 @@ export function TrainPanel({ store, trainId, detailsState, onClose }: TrainPanel
   const status = getTrainStatus(details, train, serverNow)
   const canceledStops = details ? getCanceledStopsNotice(details) : null
 
+  function selectStop(stop: TrainStop) {
+    // On mobile the expanded sheet would cover the stop on the map.
+    setExpanded(false)
+    onSelectStop(stop)
+  }
+
   // Everything but the deviations is always shown, with "–" or a short text for
   // missing values, so the panel doesn't change shape when details arrive.
+  const title = getTrainName(details?.product ?? null, train.n)
   return (
     <Panel
-      title={getTrainName(details?.product ?? null, train.n)}
+      title={title}
       heading={<Heading detailsState={detailsState} />}
       onClose={onClose}
-      more={<MoreDetails detailsState={detailsState} />}
+      actions={<ShareButton title={title} />}
+      expanded={expanded}
+      onExpandedChange={setExpanded}
+      more={<MoreDetails detailsState={detailsState} onSelectStop={selectStop} />}
     >
       <StatusRow detailsState={detailsState} status={status} />
       <NextStop detailsState={detailsState} />

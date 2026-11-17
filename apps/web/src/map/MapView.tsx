@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { MapLibreMap, setWorkerUrl } from "maplibre-gl"
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url"
 import "maplibre-gl/dist/maplibre-gl.css"
@@ -50,6 +50,21 @@ function saveView(map: MapLibreMap) {
   }
 }
 
+// Shifts the center so the selected train lands in the part of the map the panel doesn't cover:
+// above the bottom sheet on mobile, to the right of the side panel on desktop.
+function getPanelOffset(): [number, number] {
+  const panel = document.querySelector("[data-panel]")
+  if (!panel) {
+    return [0, 0]
+  }
+  const rect = panel.getBoundingClientRect()
+  // Tailwind's md breakpoint, where the panel becomes a side panel.
+  if (window.matchMedia("(min-width: 48rem)").matches) {
+    return [rect.right / 2, 0]
+  }
+  return [0, -(window.innerHeight - rect.top) / 2]
+}
+
 function applyTheme(map: MapLibreMap) {
   applyColors(map)
   applyStopColors(map)
@@ -62,13 +77,31 @@ type MapViewProps = {
   // Stops of the selected train, null when there are none to show.
   stops: TrainStop[] | null
   onSelect: (id: string | null) => void
+  following: boolean
+  onFollowingChange: (following: boolean) => void
+  // A new object each time, so picking the same stop again moves the map back to it.
+  focus: MapFocus | null
 }
 
-export function MapView({ store, selectedId, stops, onSelect }: MapViewProps) {
+export type MapFocus = { center: [number, number] }
+
+const FOCUS_ZOOM = 13
+
+export function MapView({
+  store,
+  selectedId,
+  stops,
+  onSelect,
+  following,
+  onFollowingChange,
+  focus,
+}: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
   const trainLayerRef = useRef<TrainLayer | null>(null)
-  const loadedRef = useRef(false)
+  // State, so that the effects below run again once the layers exist. Trains from a shared link
+  // and their stops can arrive before the map has loaded.
+  const [loaded, setLoaded] = useState(false)
   const scheme = useColorScheme()
 
   useEffect(() => {
@@ -87,38 +120,68 @@ export function MapView({ store, selectedId, stops, onSelect }: MapViewProps) {
     })
     map.touchZoomRotate.disableRotation()
     map.on("moveend", () => saveView(map))
+    // Only the user drags, easeTo and flyTo don't.
+    map.on("dragstart", () => onFollowingChange(false))
     mapRef.current = map
 
     map.on("load", () => {
       addStopLayer(map)
       trainLayerRef.current = addTrainLayer(map, store, onSelect)
-      loadedRef.current = true
-      applyTheme(map)
+      setLoaded(true)
     })
 
     return () => {
       trainLayerRef.current?.stop()
       trainLayerRef.current = null
-      loadedRef.current = false
+      setLoaded(false)
       map.remove()
       mapRef.current = null
     }
-  }, [store, onSelect])
+  }, [store, onSelect, onFollowingChange])
 
   useEffect(() => {
     trainLayerRef.current?.setSelected(selectedId)
+  }, [selectedId, loaded])
 
-    const train = selectedId ? store.get(selectedId) : undefined
-    if (train) {
-      mapRef.current?.easeTo({ center: [train.lo, train.la] })
+  // Centers on the train when it's selected or following is turned back on, then as it moves.
+  useEffect(() => {
+    if (!selectedId || !following) {
+      return
     }
-  }, [selectedId, store])
+
+    const centerOnTrain = () => {
+      const train = store.get(selectedId)
+      if (train) {
+        mapRef.current?.easeTo({ center: [train.lo, train.la], offset: getPanelOffset() })
+      }
+    }
+
+    centerOnTrain()
+    return store.subscribe(({ updated }) => {
+      // easeTo would cut off a pinch zoom or a previous ease that is still running.
+      if (updated.includes(selectedId) && !mapRef.current?.isMoving()) {
+        centerOnTrain()
+      }
+    })
+  }, [selectedId, following, store, loaded])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!focus || !map) {
+      return
+    }
+    map.flyTo({
+      center: focus.center,
+      zoom: Math.max(map.getZoom(), FOCUS_ZOOM),
+      offset: getPanelOffset(),
+    })
+  }, [focus])
 
   useEffect(() => {
     if (mapRef.current) {
       setStops(mapRef.current, stops ?? [])
     }
-  }, [stops])
+  }, [stops, loaded])
 
   // The line starts at the train, so it's redrawn as the train moves.
   useEffect(() => {
@@ -131,15 +194,15 @@ export function MapView({ store, selectedId, stops, onSelect }: MapViewProps) {
 
     updateLine()
     return store.subscribe(updateLine)
-  }, [stops, selectedId, store])
+  }, [stops, selectedId, store, loaded])
 
   // Not map.isStyleLoaded(), which is also false while tiles or train data load.
   useEffect(() => {
     const map = mapRef.current
-    if (map && loadedRef.current) {
+    if (map && loaded) {
       applyTheme(map)
     }
-  }, [scheme])
+  }, [scheme, loaded])
 
   // MapLibre's CSS sets the container to position: relative and wins over Tailwind's layered
   // utilities, so the positioning lives on a wrapper.
@@ -147,7 +210,11 @@ export function MapView({ store, selectedId, stops, onSelect }: MapViewProps) {
     <div className="absolute inset-0">
       <div ref={containerRef} className="h-full w-full" />
       <div className="pointer-events-none absolute top-[env(safe-area-inset-top)] right-[env(safe-area-inset-right)] bottom-[env(safe-area-inset-bottom)] left-[env(safe-area-inset-left)]">
-        <MapControls mapRef={mapRef} />
+        <MapControls
+          mapRef={mapRef}
+          following={selectedId ? following : null}
+          onFollowingChange={onFollowingChange}
+        />
         <ConnectionBanner store={store} />
         <Attribution />
       </div>

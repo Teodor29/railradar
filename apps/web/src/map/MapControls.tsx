@@ -1,5 +1,5 @@
 import { useRef, useState, type RefObject } from "react"
-import { Minus, Navigation, Plus } from "lucide-react"
+import { TrainFront, Minus, Navigation, Plus } from "lucide-react"
 import { Marker, type MapLibreMap } from "maplibre-gl"
 import { MapButton, MapControlGroup } from "./MapButton"
 
@@ -13,7 +13,14 @@ function createPositionDot() {
   return dot
 }
 
-export function MapControls({ mapRef }: { mapRef: RefObject<MapLibreMap | null> }) {
+type MapControlsProps = {
+  mapRef: RefObject<MapLibreMap | null>
+  // Null when no train is selected.
+  following: boolean | null
+  onFollowingChange: (following: boolean) => void
+}
+
+export function MapControls({ mapRef, following, onFollowingChange }: MapControlsProps) {
   const [locateState, setLocateState] = useState<LocateState>("idle")
   const positionMarkerRef = useRef<Marker | null>(null)
 
@@ -32,6 +39,7 @@ export function MapControls({ mapRef }: { mapRef: RefObject<MapLibreMap | null> 
           positionMarkerRef.current = new Marker({ element: createPositionDot() })
         }
         positionMarkerRef.current.setLngLat(position).addTo(map)
+        onFollowingChange(false)
         map.flyTo({ center: position, zoom: Math.max(map.getZoom(), LOCATE_ZOOM) })
         setLocateState("idle")
       },
@@ -42,6 +50,19 @@ export function MapControls({ mapRef }: { mapRef: RefObject<MapLibreMap | null> 
 
   return (
     <div className="pointer-events-auto absolute top-4 right-4 flex flex-col gap-3 md:top-auto md:bottom-4">
+      {following !== null ? (
+        <MapControlGroup>
+          <MapButton
+            label="Följ tåget"
+            onClick={() => onFollowingChange(!following)}
+            tone={following ? "accent" : "default"}
+            pressed={following}
+          >
+            <TrainFront className="size-5" />
+          </MapButton>
+        </MapControlGroup>
+      ) : null}
+
       <MapControlGroup>
         <MapButton
           label="Visa min position"

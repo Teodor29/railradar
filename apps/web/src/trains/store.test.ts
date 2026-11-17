@@ -86,6 +86,16 @@ describe("TrainStore", () => {
     expect(changes).toEqual([{ updated: ["a", "b"], removed: [] }])
   })
 
+  it("keeps one connection when started twice, and reconnects after a stop", () => {
+    store.start()
+    expect(sources).toHaveLength(1)
+
+    store.stop()
+    store.start()
+    expect(sources).toHaveLength(2)
+    expect(sources[0]?.readyState).toBe(CLOSED)
+  })
+
   it("replaces everything on a new snapshot and reports trains that are gone", () => {
     current().send("snapshot", [train("a"), train("b")])
     current().send("snapshot", [train("b"), train("c")])
