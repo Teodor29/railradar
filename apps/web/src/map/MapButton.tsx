@@ -12,6 +12,8 @@ type MapButtonProps = {
   tone?: keyof typeof toneClasses
   disabled?: boolean
   busy?: boolean
+  // For toggle buttons.
+  pressed?: boolean
   title?: string
 }
 
@@ -31,6 +33,7 @@ export function MapButton({
   tone = "default",
   disabled = false,
   busy = false,
+  pressed,
   title,
 }: MapButtonProps) {
   const classes = [
@@ -48,6 +51,7 @@ export function MapButton({
       disabled={disabled}
       aria-label={label}
       aria-busy={busy}
+      aria-pressed={pressed}
       title={title}
       className={classes.join(" ")}
     >

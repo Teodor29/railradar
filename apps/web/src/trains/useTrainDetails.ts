@@ -33,9 +33,11 @@ export function useTrainDetails(id: string | null): TrainDetailsState {
     }
 
     const controller = new AbortController()
+    let lastLoadAt = 0
 
     // An arrow function, since a hoisted declaration would lose the null check above.
     const load = async () => {
+      lastLoadAt = Date.now()
       try {
         const details = await fetchTrainDetails(id, controller.signal)
         if (details) {
@@ -58,11 +60,25 @@ export function useTrainDetails(id: string | null): TrainDetailsState {
       }
     }
 
+    // No refreshes in the background. Coming back catches up if one was skipped.
+    const refresh = () => {
+      if (!document.hidden) {
+        void load()
+      }
+    }
+    const catchUp = () => {
+      if (!document.hidden && Date.now() - lastLoadAt >= REFRESH_INTERVAL_MS) {
+        void load()
+      }
+    }
+
     void load()
-    const timer = setInterval(load, REFRESH_INTERVAL_MS)
+    const timer = setInterval(refresh, REFRESH_INTERVAL_MS)
+    document.addEventListener("visibilitychange", catchUp)
     return () => {
       controller.abort()
       clearInterval(timer)
+      document.removeEventListener("visibilitychange", catchUp)
       // So that reopening a train starts from "loading" instead of old data.
       setResult(null)
     }

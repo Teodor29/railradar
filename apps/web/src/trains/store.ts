@@ -87,7 +87,11 @@ export class TrainStore {
     return () => this.connectionListeners.delete(listener)
   }
 
+  // Does nothing if already started.
   start(): void {
+    if (this.watchdogTimer) {
+      return
+    }
     this.connect()
     this.watchdogTimer = setInterval(() => this.checkConnection(), WATCHDOG_INTERVAL_MS)
   }

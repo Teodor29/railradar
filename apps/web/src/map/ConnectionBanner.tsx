@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState, useSyncExternalStore } from "react"
 import { WifiOff } from "lucide-react"
 import type { TrainStore } from "../trains/store"
+import { usePageVisible } from "../usePageVisible"
 
 const SHOW_AFTER_MS = 5_000
 
@@ -10,8 +11,11 @@ export function ConnectionBanner({ store }: { store: TrainStore }) {
     [store],
   )
   const connected = useSyncExternalStore(subscribe, () => store.isConnected)
+  // The stream is paused in the background, which shouldn't show up as a lost connection
+  // when coming back. Remounting also restarts the delay.
+  const visible = usePageVisible()
 
-  if (connected) {
+  if (connected || !visible) {
     return null
   }
   return <DelayedBanner />

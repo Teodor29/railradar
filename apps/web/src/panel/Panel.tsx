@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ButtonHTMLAttributes, type ReactNode } from "react"
-import { ChevronDown, ChevronUp, X } from "lucide-react"
+import { X } from "lucide-react"
 
 // Tailwind's md breakpoint, where the sheet becomes a side panel.
 const DESKTOP_QUERY = "(min-width: 48rem)"
@@ -29,7 +29,7 @@ function getHeightBelow(content: HTMLElement, scroller: HTMLElement): number {
   return content.offsetTop + content.offsetHeight + paddingBottom
 }
 
-function HeaderButton(props: ButtonHTMLAttributes<HTMLButtonElement>) {
+export function HeaderButton(props: ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
       type="button"
@@ -47,12 +47,24 @@ type PanelProps = {
   children: ReactNode
   // Added below children when the panel is expanded.
   more: ReactNode
+  // Extra buttons in the header, before the close button.
+  actions?: ReactNode
+  // Only applies to mobile, the side panel on desktop always shows everything.
+  expanded: boolean
+  onExpandedChange: (expanded: boolean) => void
 }
 
 // Bottom sheet on mobile, side panel on desktop.
-export function Panel({ title, heading, onClose, children, more }: PanelProps) {
-  // Only applies to mobile, the side panel on desktop always shows everything.
-  const [expanded, setExpanded] = useState(false)
+export function Panel({
+  title,
+  heading,
+  onClose,
+  children,
+  more,
+  actions,
+  expanded,
+  onExpandedChange,
+}: PanelProps) {
   const [drag, setDrag] = useState<SheetDrag | null>(null)
   const gesture = useRef<Gesture | null>(null)
   const settleTimer = useRef<number | undefined>(undefined)
@@ -82,7 +94,13 @@ export function Panel({ title, heading, onClose, children, more }: PanelProps) {
 
       if (!gesture.current) {
         const target = event.target
-        if (!(target instanceof Element) || target.closest("button")) {
+        if (!(target instanceof Element)) {
+          return
+        }
+        // Header buttons are tapped, not dragged. The handle is a button too, but dragging it
+        // should move the sheet, and so should the stops in the scrolling content.
+        const button = target.closest("button:not([data-handle])")
+        if (button && !scroller.contains(button)) {
           return
         }
         // Expanded content scrolls first and hands over to the sheet at the top.
@@ -119,7 +137,7 @@ export function Panel({ title, heading, onClose, children, more }: PanelProps) {
       return
     }
 
-    setExpanded(nextExpanded)
+    onExpandedChange(nextExpanded)
     setDrag({ height: Math.min(getHeightBelow(target, scroller), maxHeight), settling: true })
     settleTimer.current = window.setTimeout(() => setDrag(null), SETTLE_MS)
   }
@@ -146,6 +164,7 @@ export function Panel({ title, heading, onClose, children, more }: PanelProps) {
     <section
       ref={sectionRef}
       aria-label={title}
+      data-panel
       style={drag ? { height: drag.height } : undefined}
       className={`absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col rounded-t-2xl bg-page shadow-lg md:top-4 md:bottom-auto md:left-[max(1rem,env(safe-area-inset-left))] md:max-h-[calc(100%-2rem)] md:w-96 md:rounded-2xl ${drag?.settling ? "transition-[height] duration-200 ease-out" : ""}`}
       onTouchStart={(event) => {
@@ -155,22 +174,24 @@ export function Panel({ title, heading, onClose, children, more }: PanelProps) {
       onTouchCancel={() => settle(expanded)}
     >
       <div className="shrink-0 touch-none select-none md:touch-auto md:select-auto">
-        <div className="mx-auto mt-2 h-1 w-10 rounded-full bg-line/60 md:hidden" />
+        {/* Tap to expand or collapse, like swiping. Only on mobile, where it's a bottom sheet. */}
+        <button
+          type="button"
+          data-handle
+          onClick={() => onExpandedChange(!expanded)}
+          aria-expanded={expanded}
+          aria-label={expanded ? "Visa mindre" : "Visa mer"}
+          className="flex w-full cursor-pointer justify-center pt-2 pb-3 md:hidden"
+        >
+          <span className="h-1 w-10 rounded-full bg-line/60" />
+        </button>
 
-        <header className="flex items-start gap-2 px-4 pt-3 pb-4">
+        <header className="flex items-start gap-2 px-4 pb-4 md:pt-3">
           <div className="mr-1 min-w-0 flex-1">
             <p className="text-sm font-medium text-muted">{title}</p>
             <h2 className="text-xl font-semibold">{heading}</h2>
           </div>
-          <div className="md:hidden">
-            <HeaderButton
-              onClick={() => setExpanded(!expanded)}
-              aria-expanded={expanded}
-              aria-label={expanded ? "Visa mindre" : "Visa mer"}
-            >
-              {expanded ? <ChevronDown className="size-5" /> : <ChevronUp className="size-5" />}
-            </HeaderButton>
-          </div>
+          {actions}
           <HeaderButton onClick={onClose} aria-label="Stäng">
             <X className="size-5" />
           </HeaderButton>
